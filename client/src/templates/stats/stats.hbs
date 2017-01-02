@@ -1,0 +1,36 @@
+<div class="table-responsive">
+        <h2>Stats</h2>
+    <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Player</th>
+        <th>Team</th>
+        <th>Pos</th>
+        <th>Gp</th>
+        <th>G</th>
+        <th>A</th>
+        <th>P</th>
+        <th>penaltiesPerSixty</th>
+        <th>pointsPerSixty</th>
+        <th>FsPoints</th>
+        <th>X</th>
+      </tr>
+    </thead>
+    <tbody>
+     {{#each items.data}}
+      <tr>
+       <td>{{playerName}}</td>
+        <td>{{playerTeamsPlayedFor}}</td>
+        <td>{{playerPositionCode}}</td>
+        <td>{{gamesPlayed}}</td>
+        <td>{{goals}}</td>
+        <td>{{assists}}</td>
+        <td>{{points}}</td>
+        <td>{{penaltiesPerSixty}}</td>
+        <td>{{pointsPerSixty}}</td>
+        <td>{{fsPoints}}</td>
+        <td>dasdadss</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>

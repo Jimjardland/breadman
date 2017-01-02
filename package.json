@@ -1,0 +1,23 @@
+{
+  "name": "nhl-stats-api",
+  "version": "1.0.0",
+  "description": "Api for NHL stats",
+  "main": "server.js",
+  "scripts": {
+    "build": "babel --presets es2015 src -d _dist"
+  },
+  "author": "Jimmy Jardland",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-preset-es2015": "^6.18.0",
+    "cron": "^1.2.1",
+    "express": "^4.14.0",
+    "fs": "0.0.1-security",
+    "jsdom": "^9.8.3",
+    "mongodb": "^2.2.15",
+    "path": "^0.12.7",
+    "qs": "^6.3.0",
+    "request": "^2.79.0"
+  }
+}

@@ -1,0 +1,35 @@
+{{#each items}}
+{{> date this}}
+<div class="container bg-grey">
+  <div class="row slideanim">
+ {{#each games}}
+    <div class="col-sm-3 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <div data-spoil>
+          {{#if gameFinished}}
+                <a class="show-result" href="#">Show result</a>
+             {{else}}
+              <p>Game not played<p>
+            {{/if}}
+             <span href="#" id="" class="spoiler">{{awayGoals}} - {{homeGoals}}</span>
+          </div>
+        </div>
+        <div class="panel-body">
+            <div class="highlight {{helperLowerCase awayTeam}} {{#if gameFinished}}{{else}}not-played{{/if}}">
+            </div>
+            <div class="highlight {{helperLowerCase homeTeam}} {{#if gameFinished}}{{else}}not-played{{/if}}">
+            </div>
+            <!-- p>{{arena}}</p -->
+        </div>
+        {{#if gameFinished}}
+        <div class="panel-footer">
+          <button type="button" class="btn btn-default" data-button="iframe" data-title="{{awayTeam}} vs {{homeTeam}} - {{arena}} - {{../../date}}" data-url="{{url}}" data-toggle="modal" data-target="#myModal">Watch highlights</button>
+        </div>
+        {{/if}}
+      </div>
+    </div>     
+{{/each}}
+        
+</div>
+{{/each}}
