@@ -14,7 +14,7 @@ export default (sort) => {
 			//points per 60 minutes of icetime
 			player.pointsPerSixty = ((player.pointsPerGame / (player.timeOnIcePerGame / 60)) * 60).toFixed(1);
 			//Penalties per 60 minutes of ice time
-			player.PenaltyMinutesPerGame = player.gamesPlayed / player.penaltyMinutes;
+			player.PenaltyMinutesPerGame = player.penaltyMinutes / player.gamesPlayed;
 			player.penaltiesPerSixty = ((player.PenaltyMinutesPerGame / (player.timeOnIcePerGame / 60)) * 60).toFixed(1);
 		}
 

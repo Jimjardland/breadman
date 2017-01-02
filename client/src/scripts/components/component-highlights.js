@@ -12,6 +12,10 @@ $(document).ready(function () {
 					data: data,
 					callback: function () {
 						var spoilBtn = $(component).find('[data-spoil]');
+						$(component).find('.show-all').on('click', function () { 
+							$(this).parents('[data-container]').find('[data-spoil]').click();
+							console.log($(this).parents('[data-container]'))
+						});
 
 					    spoilBtn.on('click', function(e){ 
 					    	e.preventDefault();
@@ -25,6 +29,8 @@ $(document).ready(function () {
 							e.preventDefault();
 							var url = $(this).data('url');
 							var title = $(this).data('title');
+
+
 
 							$('#iframe').attr('src', url);
 							$('.modal-title').text(title);

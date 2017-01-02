@@ -81,9 +81,13 @@ export default () => {
 	};
 
 	const promise = new Promise((resolve, reject) => {
-		request(url, (err, resp, body) => {
-			resolve(buildPlayOff(JSON.parse(body)))
-		});
+		try {
+			request(url, (err, resp, body) => {
+				resolve(buildPlayOff(JSON.parse(body)))
+			});
+		} catch (err) {
+			console.log(err);
+		}
 	});
 
 	return promise;

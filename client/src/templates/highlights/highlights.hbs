@@ -1,4 +1,5 @@
 {{#each items}}
+<div data-container="{{@index}}">
 {{> date this}}
 <div class="container bg-grey">
   <div class="row slideanim">
@@ -8,9 +9,9 @@
         <div class="panel-heading">
           <div data-spoil>
           {{#if gameFinished}}
-                <h4><a class="show-result" href="#">Show result</a><h4>
+                <h4><a class="show-result" href="#">Show result</a></h4>
              {{else}}
-              <p>Game not played<p>
+              <h4>Game not played</h4>
             {{/if}}
              <h4 class="spoiler"><strong>{{awayGoals}} - {{homeGoals}}</strong></h4>
           </div>
@@ -22,7 +23,7 @@
             </div>
             <!-- p>{{arena}}</p -->
         </div>
-        {{#if gameFinished}}
+        {{#if url}}
         <div class="panel-footer">
           <button type="button" class="btn btn-default" data-button="iframe" data-title="{{awayTeam}} vs {{homeTeam}} - {{arena}} - {{../../date}}" data-url="{{url}}" data-toggle="modal" data-target="#myModal">Watch highlights</button>
         </div>
@@ -30,6 +31,7 @@
       </div>
     </div>     
 {{/each}}
-        
+</div>
+</div>
 </div>
 {{/each}}
