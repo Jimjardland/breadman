@@ -14,10 +14,10 @@
     <tbody>
     {{#each Injuries}}
       <tr>
-          <td>{{Player.FirstName}} {{Player.LastName}}</td>
-          <td>{{ReportedDate}}</td>
-          <td>{{InjuryDetail.Status}}</td>
-          <td>{{InjuryDetail.Description}}</td>
+          <td class="col-md-3">{{Player.FirstName}} {{Player.LastName}}</td>
+          <td class="col-md-2">{{ReportedDate}}</td>
+          <td class="col-md-2">{{InjuryDetail.Status}}</td>
+          <td class="col-md-4">{{InjuryDetail.Description}}</td>
       </tr>
     {{/each}}
     </tbody>

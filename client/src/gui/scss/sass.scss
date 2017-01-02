@@ -11,7 +11,7 @@ padding-top: 70px !important;
 
 .home{
     background-image: url("../img/bhawks.png");
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; 
     background-size: contain;
     height: 100px;
     width: 100px;
@@ -36,7 +36,15 @@ padding-top: 70px !important;
     height: 70px;
     width: 70px;
     padding: 0 10px 0 0;
-    display: inline-block;
+    margin: 10px 0 0 0;
+    float: right;
+}
+.goalie-team2{
+    height: 70px;
+    width: 70px;
+    padding: 0 10px 0 0;
+    margin: 10px 0 0 0;
+    float: left;
 }
 .random{
    margin-left: 0 !important;
@@ -48,15 +56,22 @@ padding-top: 70px !important;
       padding: 0 0 2em 0;
       margin: 0 0 4em 0;
 }
+.team-container{
+    //fixa höjd
+    border-bottom: 1px solid black;
+      padding: 2em 0 2em 0;
+      margin: 0 0 5em 0;
+}
 .not-played{
     opacity: 0.3;
 }
 .show-result{
     color:black;
-    text-decoration: none;
+    text-decoration: underline;
 }
 .show-result:hover{
     color: black;
+    text-decoration: none;
 }
 .spoiler{
     display:none;
@@ -83,72 +98,119 @@ padding-top: 70px !important;
     width: 100px;
     display:inline-block;
 }
+.show-all{ 
+    float: left;
+}
 .iframes{
     height: 500px;
     width: 870px;
+}
+.stats{
+    display: inline-block;
+}
+.drop{
+  float: right;
+overflow: visible;
 }
 @media (max-width: 480px) {
     .iframes{
         height: auto;
         width: auto;
     }
- }
-
-
-/*
-playoffs
-*/
-main{
-  display:flex;
-  flex-direction:row;
+    //gör den mitten på riktigt
+    .goalie-team{
+    height: 70px;
+    width: 70px;
+    margin: 0 2em 2em 0;
 }
-.round{
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  width:200px;
-  list-style:none;
-  padding:0;
+    //gör den mitten på riktigt
+    .goalie-team2{
+    height: 70px;
+    width: 70px;
+     margin: 0 0 2em 2em;
+
 }
-  .round .spacer{ flex-grow:1; }
-  .round .spacer:first-child,
-  .round .spacer:last-child{ flex-grow:.5; }
+.center-button{
+ text-align: center;
+ margin: 0 auto;
 
-  .round .game-spacer{
-    flex-grow:1;
-  }
-
-/*
- * playoffs General Styles
-*/
-body{
-  font-family:sans-serif;
-  font-size:small;
-  padding:10px;
-  line-height:1.4em;
+}
+.show-all{
+  float: none;
 }
 
-li.game{
-  padding-left:20px;
 }
 
-  li.game.winner{
-    font-weight:bold;
-  }
-  li.game span{
-    float:right;
-    margin-right:5px;
-  }
 
-  li.game-top{ border-bottom:1px solid #aaa; }
-
-  li.game-spacer{ 
-    border-right:1px solid #aaa;
-    min-height:40px;
-  }
-
-  li.game-bottom{ 
-    border-top:1px solid #aaa;
-  }
-
-
+.round {
+  float: left;
+  display: block;
+}
+.round.r-of-4 {
+  display: block;
+}
+.round.r-of-2 {
+  margin-top: 25px;
+}
+.bracket-game {
+  max-width: 125px;
+  margin: 10px 0;
+}
+.player {
+  min-width: 100px;
+  border: 1px solid #AAA;
+  padding-left: 10px;
+}
+.player.top {
+  border-radius: 3px 3px 0 0;
+}
+.player.bot {
+  border-radius: 0 0 3px 3px;
+}
+.player .score {
+  display: inline;
+  float: right;
+  border-left: 1px solid #AAA;
+  padding-left: 10px;
+  padding-right: 10px;
+  background: #EEE;
+}
+.player.win {
+  background-color: #B8F2B8;
+}
+.player.loss {
+  background-color: #F2B8B8;
+}
+.connectors {
+  float: left;
+  min-width: 35px;
+}
+.connectors.r-of-2 .top-line {
+  position: relative;
+  top: 30px;
+  width: 17px;
+  border: 1px solid #AAA;
+}
+.connectors.r-of-2 .bottom-line {
+  position: relative;
+  top: 81px;
+  width: 17px;
+  border: 1px solid #AAA;
+}
+.connectors.r-of-2 .vert-line {
+  position: relative;
+  top: 26px;
+  left: -16px;
+  height: 55px;
+  border-right: 2px solid #AAA;
+}
+.connectors.r-of-2 .next-line {
+  position: relative;
+  top: -4px;
+  left: 17px;
+  width: 17px;
+  border: 1px solid #AAA;
+}
+.clear {
+  clear: both;
+}

@@ -32,7 +32,7 @@
   background-image: url("../img/devils.png"); }
 
 .ducks {
-  background-image: url("../img/ducks.gif"); }
+  background-image: url("../img/ducks.png"); }
 
 .panthers {
   background-image: url("../img/panthers.png"); }
@@ -82,7 +82,7 @@
 .vancouver {
   background-image: url("../img/vancouver.png"); }
 
-.wild {
+.wilds {
   background-image: url("../img/wilds.png"); }
 
 .jets {
@@ -114,7 +114,7 @@ body {
   border-radius: 10px; }
 
 .goalie-team {
-  height: 70px;
+  height: 82330px;
   width: 70px;
   padding: 0 10px 0 0;
   margin: 10px 0 0 0;
@@ -188,10 +188,6 @@ body {
 .stats {
   display: inline-block; }
 
-.drop {
-  float: right;
-  overflow: visible; }
-
 @media (max-width: 480px) {
   .iframes {
     height: auto;
@@ -205,14 +201,7 @@ body {
   .goalie-team2 {
     height: 70px;
     width: 70px;
-    margin: 0 0 2em 2em; }
-
-  .center-button {
-    text-align: center;
-    margin: 0 auto; }
-
-  .show-all {
-    float: none; } }
+    margin: 0 0 2em 2em; } }
 .round {
   float: left;
   display: block; }
