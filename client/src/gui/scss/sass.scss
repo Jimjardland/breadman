@@ -1,0 +1,154 @@
+// $full-width: 100%;
+// $main-padding: 2rem;
+// $super-padding: $main-padding * 2;
+
+// @import "mixins";
+@import "teams";
+
+body{
+padding-top: 70px !important;
+}
+
+.home{
+    background-image: url("../img/bhawks.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100px;
+    width: 100px;
+    display:inline-block;
+}
+.away{
+    background-image: url("../img/dallas.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100px;
+    width: 100px;
+    display: inline-block;
+ 
+}
+.goalie{
+    height: auto;
+    width: auto;
+    display: inline-block;
+    border-radius: 10px;
+}
+.goalie-team{
+    height: 70px;
+    width: 70px;
+    padding: 0 10px 0 0;
+    display: inline-block;
+}
+.random{
+   margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: auto !important;
+}
+.date-container{
+      border-bottom: 1px solid black;
+      padding: 0 0 2em 0;
+      margin: 0 0 4em 0;
+}
+.not-played{
+    opacity: 0.3;
+}
+.show-result{
+    color:black;
+    text-decoration: none;
+}
+.show-result:hover{
+    color: black;
+}
+.spoiler{
+    display:none;
+}
+.pagination{
+    margin: 0 auto;
+}
+.injuries-team{
+    display:inline-block;
+}
+.injury{
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    margin-bottom: -12px;
+}
+.highlight{
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100px;
+    width: 100px;
+    display:inline-block;
+}
+.iframes{
+    height: 500px;
+    width: 870px;
+}
+@media (max-width: 480px) {
+    .iframes{
+        height: auto;
+        width: auto;
+    }
+ }
+
+
+/*
+playoffs
+*/
+main{
+  display:flex;
+  flex-direction:row;
+}
+.round{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  width:200px;
+  list-style:none;
+  padding:0;
+}
+  .round .spacer{ flex-grow:1; }
+  .round .spacer:first-child,
+  .round .spacer:last-child{ flex-grow:.5; }
+
+  .round .game-spacer{
+    flex-grow:1;
+  }
+
+/*
+ * playoffs General Styles
+*/
+body{
+  font-family:sans-serif;
+  font-size:small;
+  padding:10px;
+  line-height:1.4em;
+}
+
+li.game{
+  padding-left:20px;
+}
+
+  li.game.winner{
+    font-weight:bold;
+  }
+  li.game span{
+    float:right;
+    margin-right:5px;
+  }
+
+  li.game-top{ border-bottom:1px solid #aaa; }
+
+  li.game-spacer{ 
+    border-right:1px solid #aaa;
+    min-height:40px;
+  }
+
+  li.game-bottom{ 
+    border-top:1px solid #aaa;
+  }
+
+

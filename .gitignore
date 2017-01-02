@@ -1,0 +1,5 @@
+client/src/node_modules/decompress/node_modules/glob-stream/node_modules
+client/src/node_modules
+node_modules
+client/src/gui/.sass-cache
+_dist

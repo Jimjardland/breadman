@@ -11,7 +11,7 @@ app.use('/api', router);
 app.use('/img', express.static('img'));
 app.use('/layouts', express.static('client'));
 
-const page = (res, page) => res.sendFile(path.resolve(`client/src/nhl/${page}.html`));
+const page = (res, page) => res.sendFile(path.resolve(`client/src/gui/${page}.html`));
 
 app.get('/', (req, res) => page(res, 'index'));
 app.get('/injuries', (req, res) => page(res, 'injuries'));
