@@ -13,27 +13,40 @@
             <li><a href="#">dsadd link</a></li>
           </ul>
         </div>
+        <div class="dropdown drop">
+          <button class="btn btn-default sort-by dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            Sort by
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu pull-right drop-btn" aria-labelledby="dropdownMenu1">
+            <li><a href="#">hej</a></li>
+           <li role="separator" class="divider"></li>
+            <li><a href="#">och</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">hå link</a></li>
+          </ul>
+        </div>
     <table class="table table-striped">
     <thead>
       <tr>
-        <th>Player</th>
-        <th>Team</th>
-        <th>Pos</th>
-        <th>Gp</th>
-        <th>G</th>
-        <th>A</th>
-        <th>P</th>
-        <th>penaltiesPerSixty</th>
-        <th>pointsPerSixty</th>
-        <th>FsPoints</th>
-        <th>X</th>
+        <th data-toggle="tooltip" data-placement="top" title="just the tip">Player</th>
+        <th data-toggle="tooltip" data-placement="top" title="just the tip">Team</th>
+        <th data-toggle="tooltip" data-placement="top" title="just the tip">Pos</th>
+        <th data-toggle="tooltip" data-placement="top" title="just the tip">Gp</th>
+        <th data-toggle="tooltip" data-placement="top" title="just the tip">G</th>
+        <th data-toggle="tooltip" data-placement="top" title="just the tip">A</th>
+        <th data-toggle="tooltip" data-placement="top" title="just the tip">P</th>
+        <th data-toggle="tooltip" data-placement="top" title="just the tip">penaltiesPerSixty</th>
+        <th data-toggle="tooltip" data-placement="top" title="just the tip">pointsPerSixty</th>
+        <th data-toggle="tooltip" data-placement="top" title="just the tip">FsPoints</th>
+        <th data-toggle="tooltip" data-placement="top" title="just the tip">X</th>
       </tr>
     </thead>
     <tbody>
      {{#each items.data}}
       <tr>
        <td>{{playerName}}</td>
-        <td>{{playerTeamsPlayedFor}}</td>
+        <td class="small-logo {{helperLowerCase playerTeamsPlayedFor}}"></td>
         <td>{{playerPositionCode}}</td>
         <td>{{gamesPlayed}}</td>
         <td>{{goals}}</td>

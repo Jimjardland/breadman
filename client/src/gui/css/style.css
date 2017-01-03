@@ -1,288 +1,41 @@
-.blackhawks {
-  background-image: url("../img/bhawks.png"); }
-
-.bruins {
-  background-image: url("../img/bruins.png"); }
-
-.flames {
-  background-image: url("../img/flames.png"); }
-
-.canadiens {
-  background-image: url("../img/canadiens.png"); }
-
-.capitals {
-  background-image: url("../img/capitals.png"); }
-
-.avalanche {
-  background-image: url("../img/avalanche.png"); }
-
-.columbus {
-  background-image: url("../img/columbus.png"); }
-
-.coyotes {
-  background-image: url("../img/coyotes.png"); }
-
-.stars {
-  background-image: url("../img/stars.png"); }
-
-.detroit {
-  background-image: url("../img/detroit.png"); }
-
-.devils {
-  background-image: url("../img/devils.png"); }
-
-.ducks {
-  background-image: url("../img/ducks.gif"); }
-
-.panthers {
-  background-image: url("../img/panthers.png"); }
-
-.hurricanes {
-  background-image: url("../img/hurricanes.png"); }
-
-.islanders {
-  background-image: url("../img/islanders.png"); }
-
-.kings {
-  background-image: url("../img/kings.png"); }
-
-.blues {
-  background-image: url("../img/blues.png"); }
-
-.predators {
-  background-image: url("../img/predators.png"); }
-
-.oilers {
-  background-image: url("../img/oilers.png"); }
-
-.senators {
-  background-image: url("../img/senators.png"); }
-
-.penguins {
-  background-image: url("../img/penguins.png"); }
-
-.flyers {
-  background-image: url("../img/flyers.png"); }
-
-.rangers {
-  background-image: url("../img/rangers.png"); }
-
-.sabres {
-  background-image: url("../img/sabres.png"); }
-
-.sharks {
-  background-image: url("../img/sharks.png"); }
-
-.tampa {
-  background-image: url("../img/tampa.png"); }
-
-.toronto {
-  background-image: url("../img/toronto.png"); }
-
-.vancouver {
-  background-image: url("../img/vancouver.png"); }
-
-.wild {
-  background-image: url("../img/wilds.png"); }
-
-.jets {
-  background-image: url("../img/jets.png"); }
-
-body {
-  padding-top: 70px !important; }
-
-.home {
-  background-image: url("../img/bhawks.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 100px;
-  width: 100px;
-  display: inline-block; }
-
-.away {
-  background-image: url("../img/dallas.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 100px;
-  width: 100px;
-  display: inline-block; }
-
-.goalie {
-  height: auto;
-  width: auto;
-  display: inline-block;
-  border-radius: 10px; }
-
-.goalie-team {
-  height: 70px;
-  width: 70px;
-  padding: 0 10px 0 0;
-  margin: 10px 0 0 0;
-  float: right; }
-
-.goalie-team2 {
-  height: 70px;
-  width: 70px;
-  padding: 0 10px 0 0;
-  margin: 10px 0 0 0;
-  float: left; }
-
-.random {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-  width: auto !important; }
-
-.date-container {
-  border-bottom: 1px solid black;
-  padding: 0 0 2em 0;
-  margin: 0 0 4em 0; }
-
-.team-container {
-  border-bottom: 1px solid black;
-  padding: 2em 0 2em 0;
-  margin: 0 0 5em 0; }
-
-.not-played {
-  opacity: 0.3; }
-
-.show-result {
-  color: black;
-  text-decoration: underline; }
-
-.show-result:hover {
-  color: black;
-  text-decoration: none; }
-
-.spoiler {
-  display: none; }
-
-.pagination {
-  margin: 0 auto; }
-
-.injuries-team {
-  display: inline-block; }
-
-.injury {
-  background-repeat: no-repeat;
-  background-size: contain;
-  display: inline-block;
-  width: 50px;
-  height: 50px;
-  margin-right: 10px;
-  margin-bottom: -12px; }
-
-.highlight {
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 100px;
-  width: 100px;
-  display: inline-block; }
-
-.show-all {
-  float: left; }
-
-.iframes {
-  height: 500px;
-  width: 870px; }
-
-.stats {
-  display: inline-block; }
-
-.drop {
-  float: right;
-  overflow: visible; }
-
-@media (max-width: 480px) {
-  .iframes {
-    height: auto;
-    width: auto; }
-
-  .goalie-team {
-    height: 70px;
-    width: 70px;
-    margin: 0 2em 2em 0; }
-
-  .goalie-team2 {
-    height: 70px;
-    width: 70px;
-    margin: 0 0 2em 2em; }
-
-  .center-button {
-    text-align: center;
-    margin: 0 auto; }
-
-  .show-all {
-    float: none; } }
-.round {
-  float: left;
-  display: block; }
-
-.round.r-of-4 {
-  display: block; }
-
-.round.r-of-2 {
-  margin-top: 25px; }
-
-.bracket-game {
-  max-width: 125px;
-  margin: 10px 0; }
-
-.player {
-  min-width: 100px;
-  border: 1px solid #AAA;
-  padding-left: 10px; }
-
-.player.top {
-  border-radius: 3px 3px 0 0; }
-
-.player.bot {
-  border-radius: 0 0 3px 3px; }
-
-.player .score {
-  display: inline;
-  float: right;
-  border-left: 1px solid #AAA;
-  padding-left: 10px;
-  padding-right: 10px;
-  background: #EEE; }
-
-.player.win {
-  background-color: #B8F2B8; }
-
-.player.loss {
-  background-color: #F2B8B8; }
-
-.connectors {
-  float: left;
-  min-width: 35px; }
-
-.connectors.r-of-2 .top-line {
-  position: relative;
-  top: 30px;
-  width: 17px;
-  border: 1px solid #AAA; }
-
-.connectors.r-of-2 .bottom-line {
-  position: relative;
-  top: 81px;
-  width: 17px;
-  border: 1px solid #AAA; }
-
-.connectors.r-of-2 .vert-line {
-  position: relative;
-  top: 26px;
-  left: -16px;
-  height: 55px;
-  border-right: 2px solid #AAA; }
-
-.connectors.r-of-2 .next-line {
-  position: relative;
-  top: -4px;
-  left: 17px;
-  width: 17px;
-  border: 1px solid #AAA; }
-
-.clear {
-  clear: both; }
-
-/*# sourceMappingURL=style.css.map */
+/*
+Error: Invalid CSS after "  }": expected selector or at-rule, was "}"
+        on line 170 of scss/sass.scss
+
+165:     margin: 0 auto;
+166:   }
+167:   .show-all{
+168:     float: none;
+169:   }
+170: }
+171: 
+172: 
+173: .round {
+174:   float: left;
+175:   display: block;
+
+Backtrace:
+scss/sass.scss:170
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:1189:in `expected'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:1125:in `expected'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:42:in `parse'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/engine.rb:406:in `_to_tree'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/engine.rb:381:in `_render_with_sourcemap'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/engine.rb:298:in `render_with_sourcemap'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:492:in `update_stylesheet'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:209:in `each'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:473:in `on_file_changed'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:331:in `block in watch'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/vendor/listen/lib/listen/listener.rb:252:in `call'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/vendor/listen/lib/listen/listener.rb:252:in `on_change'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/vendor/listen/lib/listen/listener.rb:290:in `block in initialize_adapter'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/vendor/listen/lib/listen/adapters/polling.rb:48:in `call'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/vendor/listen/lib/listen/adapters/polling.rb:48:in `poll_changed_directories'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/vendor/listen/lib/listen/adapter.rb:299:in `block in start_poller'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"  }\": expected selector or at-rule, was \"}\"\A         on line 170 of scss/sass.scss\A \A 165:     margin: 0 auto;\A 166:   }\A 167:   .show-all{\A 168:     float: none;\A 169:   }\A 170: }\A 171: \A 172: \A 173: .round {\A 174:   float: left;\A 175:   display: block;"; }

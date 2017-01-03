@@ -91,6 +91,13 @@ padding-top: 70px !important;
     margin-right: 10px;
     margin-bottom: -12px;
 }
+.small-logo{
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+}
 .highlight{
     background-repeat: no-repeat;
     background-size: contain;
@@ -101,6 +108,9 @@ padding-top: 70px !important;
 .show-all{ 
     float: left;
 }
+.sort-by{
+  margin: 0 0.5em 0 0;
+}
 .iframes{
     height: 500px;
     width: 870px;
@@ -108,37 +118,55 @@ padding-top: 70px !important;
 .stats{
     display: inline-block;
 }
+.tooltip-inner {
+    width: 550px;
+   
+}
+.goalie{
+    border-radius: 10px;
+}
+.goalie-team{
+    height: 120px;
+    margin: 5px;
+    
+}
+.alert-success{
+    color: black !important;
+    background-color: #3c763d !important;
+}
+.alert-danger{
+    color: black !important;
+    background-color: #a94442 !important;
+}
+.goalie-name{
+    margin: 1em 0 1em 0;
+}
+.matchup{
+    margin: 1em 0 1em 0;
+}
+/*???*/
 .drop{
   float: right;
-overflow: visible;
+  overflow: visible;
 }
 @media (max-width: 480px) {
     .iframes{
-        height: auto;
-        width: auto;
+      height: auto;
+      width: auto;
     }
-    //gör den mitten på riktigt
     .goalie-team{
-    height: 70px;
-    width: 70px;
-    margin: 0 2em 2em 0;
-}
-    //gör den mitten på riktigt
-    .goalie-team2{
-    height: 70px;
-    width: 70px;
-     margin: 0 0 2em 2em;
-
-}
-.center-button{
- text-align: center;
- margin: 0 auto;
-
-}
-.show-all{
-  float: none;
-}
-
+      height: 70px;
+      width: 70px;
+      margin: 5px;
+    }
+  }
+  .center-button{
+    text-align: center;
+    margin: 0 auto;
+  }
+  .show-all{
+    float: none;
+  }
 }
 
 
