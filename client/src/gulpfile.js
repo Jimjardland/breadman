@@ -3,7 +3,7 @@ var handlebars = require('gulp-handlebars'),
     declare = require('gulp-declare'),
     path = require('path'),
     gulp = require('gulp'),
-    sass = require('gulp-ruby-sass'),
+    sass = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
     cssnano = require('gulp-cssnano'),
     jshint = require('gulp-jshint'),
@@ -22,6 +22,7 @@ gulp.task('default', function() {
     gulp.start('templates');
     gulp.start('scripts');
     gulp.start('partials');
+    gulp.start('sass');
 });
  
 gulp.task('templates', function(){
@@ -33,7 +34,19 @@ gulp.task('templates', function(){
       noRedeclare: true, // Avoid duplicate declarations 
     }))
     .pipe(concat('nhl.templates.js'))
-    .pipe(gulp.dest('./_dist/build/js/'));
+    .pipe(gulp.dest('./_dist/build/js/'))
+    .pipe(livereload());
+});
+
+
+gulp.task('sass', function () {
+  return gulp.src('./gui/**/*.scss') //'./sass/**/*.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest('./_dist/build/'))
+    .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+    .pipe(rename({suffix: '.min'}))
+    .pipe(gulp.dest('./_dist/build/'))
+    .pipe(livereload());
 });
 
 gulp.task('scripts', function() {
@@ -45,7 +58,7 @@ gulp.task('scripts', function() {
     .pipe(rename({suffix: '.min'}))
     .pipe(uglify())
     .pipe(gulp.dest('./_dist/build/js/'))
-    .pipe(notify({ message: 'Scripts task complete' }));
+    .pipe(livereload());
 });
 
 
@@ -68,14 +81,16 @@ gulp.task('partials', function() {
 });
 
 gulp.task('watch', function() {
-
+  
   // Watch .scss files
-  gulp.watch('./styles/**/*.scss', ['styles']);
+  gulp.watch('./gui/**/*.scss', ['sass']);
 
   // Watch .js files
-  gulp.watch('./**/*.js', ['scripts']);
+  gulp.watch('./scripts/**/*.js', ['scripts']);
 
-  // Watch image files
-  gulp.watch('./templates/**/*.hbs', ['templates', 'partials']);
+  // Watch .hbs files
+  gulp.watch('./templates/**/*.hbs', ['partials', 'templates']);
+
+  livereload.listen()
 
 });
