@@ -135,7 +135,8 @@ body {
 .date-container {
   border-bottom: 1px solid black;
   padding: 0 0 2em 0;
-  margin: 0 0 4em 0; }
+  margin: 0 0 4em 0;
+  height: 26; }
 
 .team-container {
   border-bottom: 1px solid black;
@@ -146,6 +147,7 @@ body {
   opacity: 0.3; }
 
 .show-result {
+  display: inline-block;
   color: black;
   text-decoration: underline; }
 
@@ -186,6 +188,7 @@ body {
   display: inline-block; }
 
 .show-all {
+  display: inline-block;
   float: left; }
 
 .sort-by {
@@ -202,11 +205,21 @@ body {
   width: 550px; }
 
 .goalie {
-  border-radius: 10px; }
+  border-radius: 10px;
+  display: inline-block;
+  vertical-align: middle; }
 
 .goalie-team {
   height: 120px;
   margin: 5px; }
+
+.goalie-team {
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+  vertical-align: middle;
+  height: 135px;
+  width: 200px; }
 
 .alert-success {
   color: black !important;
@@ -221,6 +234,9 @@ body {
 
 .matchup {
   margin: 1em 0 1em 0; }
+
+.date {
+  display: inline-block; }
 
 /*???*/
 .drop {

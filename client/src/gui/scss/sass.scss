@@ -55,6 +55,7 @@ padding-top: 70px !important;
       border-bottom: 1px solid black;
       padding: 0 0 2em 0;
       margin: 0 0 4em 0;
+      height: 26;
 }
 .team-container{
     //fixa höjd
@@ -66,6 +67,7 @@ padding-top: 70px !important;
     opacity: 0.3;
 }
 .show-result{
+    display: inline-block;
     color:black;
     text-decoration: underline;
 }
@@ -106,6 +108,7 @@ padding-top: 70px !important;
     display:inline-block;
 }
 .show-all{ 
+  display: inline-block;
     float: left;
 }
 .sort-by{
@@ -124,10 +127,21 @@ padding-top: 70px !important;
 }
 .goalie{
     border-radius: 10px;
+    display: inline-block;
+    vertical-align: middle;
 }
 .goalie-team{
     height: 120px;
     margin: 5px;
+    
+}
+.goalie-team{
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+    vertical-align: middle;
+    height: 135px;
+    width: 200px;
     
 }
 .alert-success{
@@ -143,6 +157,9 @@ padding-top: 70px !important;
 }
 .matchup{
     margin: 1em 0 1em 0;
+}
+.date{
+  display: inline-block;
 }
 /*???*/
 .drop{
