@@ -24,3 +24,7 @@ export const todayAndDaysBack = (daysBack, format) => {
 export const formatDate = (date, format) => {
 	return moment(date).format(format);
 }
+
+export const cacheDates = () => {
+	return { latestUpdate: new Date().toISOString(), nextUpdate: moment(new Date()).add(10, 'minutes').toISOString() }
+}

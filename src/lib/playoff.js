@@ -3,7 +3,7 @@ import { getSeason } from './utils/timehelper'
 
 export default () => {
 	const season = getSeason();
-	const url = `https://statsapi.web.nhl.com/api/v1/standings/wildCardWithLeaders?expand=standings.record,standings.team,standings.division,standings.conference,team.schedule.next,team.schedule.previous&season=20152016`;
+	const url = `https://statsapi.web.nhl.com/api/v1/standings/wildCardWithLeaders?expand=standings.record,standings.team,standings.division,standings.conference,team.schedule.next,team.schedule.previous&season=${season}`;
 
 	const buildPlayOff = (json) => {
 		json = json.records;

@@ -5,40 +5,28 @@ import playerStats from './playerStats';
 import highlights from './highlights';
 import playoff from './playoff';
 import startingGoalies from './startingGoalies';
+import wildCardStandings from './wildCardStandings';
+import divisonStandings from './divisionStandings';
+import { cacheDates } from './utils/timehelper';
 
 var CronJob = require('cron').CronJob;
 
 var job = new CronJob('0 */1 * * * *', function() {
 
   console.log('CronJob')
-  const latestUpdate = new Date(),
-        nextUpdate = new Date().setMinutes(latestUpdate.getMinutes() + 10),
-        getJson = (items) => ({ latestUpdate, nextUpdate, items }),
-        getFilePath = (file) => `./tmp/${file}.json`;
+  const dates = cacheDates(),
+        getJson = (items) => ({ latestUpdate: dates.latestUpdate, nextUpdate: dates.nextUpdate, items }),
+        getFilePath = (file) => `./tmp/${file}.json`,
+        writeFile = (file, items) => fs.writeFile(getFilePath(file), JSON.stringify(getJson(items)), 'utf8', () => null);
 
-  goaliesInForm().then(items => {
-      fs.writeFile(getFilePath('goaliesInForm'), JSON.stringify(getJson(items)), 'utf8', () => null);
-  });
-
-  injuries().then(items => {
-    fs.writeFile(getFilePath('injuries'), JSON.stringify(getJson(items)), 'utf8', () => null);
-  });
-
-  playerStats().then(items => {
-       fs.writeFile(getFilePath('playerStats'), JSON.stringify(getJson(items)), 'utf8', () => null);
-  });
-
-  highlights().then(items => {
-    fs.writeFile(getFilePath('highlights'), JSON.stringify(getJson(items)), 'utf8', () => null);
-  });
-
-  playoff().then(items => {
-    fs.writeFile(getFilePath('playoff'), JSON.stringify(getJson(items)), 'utf8', () => null);
-  });
-
-  startingGoalies().then(items => {
-    fs.writeFile(getFilePath('startingGoalies'), JSON.stringify(getJson(items)), 'utf8', () => null);
-  });
+  goaliesInForm().then(items => writeFile('goaliesInForm', items));
+  wildCardStandings().then(items => writeFile('wildCardStandings', items));
+  injuries().then(items => writeFile('injuries', items));
+  playerStats().then(items => writeFile('playerStats', items));
+  highlights().then(items => writeFile('highlights', items));
+  playoff().then(items => writeFile('playoff', items));
+  startingGoalies().then(items => writeFile('startingGoalies', items));
+  divisonStandings().then(items => writeFile('divisionStandings', items));
 
 
   }, function () {

@@ -31,8 +31,11 @@ router.get('/injuries', (req, res) => get('injuries', res));
 router.get('/goaliesInForm', (req, res) => get('goaliesInForm', res));
 router.get('/getStats', (req, res) => get('playerStats', res));
 router.get('/highlights', (req, res) => get('highlights', res));
-router.get('/ifPlayOffsWouldStartToday', (req, res) => get('playOff', res))
+router.get('/ifPlayOffsWouldStartToday', (req, res) => get('playOff', res));
 router.get('/startingGoalies', (req, res) => get('startingGoalies', res));
+router.get('/wildcardStandings', (req, res) => get('wildcardStandings', res));
+router.get('/divisionStandings', (req, res) => get('divisionStandings', res));
+
 
 
 router.get('/drafteePoints', (req, res) => {
