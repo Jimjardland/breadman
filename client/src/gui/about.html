@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="layouts/src/gui/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.0/handlebars.min.js"></script>
+    <script src="layouts/src/_dist/build/js/nhl.templates.js"></script>
+    <script src="layouts/src/_dist/build/js/nhl.partials.js"></script>
+    <script src="layouts/src/_dist/build/js/main.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" media="all">
+<title>nhl</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-default navbar-fixed-top " role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+     <!--  <a class="navbar-brand" href="#">Brand</a> -->
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="goalies.html">Goalies</a></li>
+        <li><a href="stats.html">Stats</a></li>
+        <li><a href="playoffs.html">Playoffs</a></li>
+        <li><a href="injuries.html">Injuries</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  <div class="container text-center team-container">
+      <div class="row">
+          <h3 class="matchup">Philadelphia Flyers at San Jose Sharks</h1>
+      </div>
+  </div>
+
+<div class="container bg-grey">
+  <div class="row slideanim">
+    <div class="col-sm-6 col-xs-6">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">      
+          <h3 class="goalie-name">Fredrik Andersen</h3>
+          <div class="alert alert-success" role="alert">Confirmed Dec. 30, 2016, 9:40 a.m.</div>
+          <div class="alert alert-warning" role="alert">maybe confirmed</div>
+          <div class="alert alert-danger" role="alert">not confirmed</div>
+        </div>
+        <div class="panel-body">
+            <div class="goalies">
+                <img class="goalie-team" src="img/toronto.png">
+                <img class="goalie" src="img_goalies/andersen.png">
+            </div>
+      </div>
+      </div>      
+    </div>     
+     <div class="col-sm-6 col-xs-6">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+                 
+          <h3 class="goalie-name">Fredrik Andersen</h3>
+          <div class="alert alert-success" role="alert">Confirmed Dec. 30, 2016, 9:40 a.m.</div>
+          <div class="alert alert-warning" role="alert">maybe confirmed</div>
+          <div class="alert alert-danger" role="alert">not confirmed</div>
+        </div>
+        <div class="panel-body">
+            <div class="goalies">
+                <img class="goalie-team" src="img/toronto.png">
+                <img class="goalie" src="img_goalies/andersen.png">
+            </div>
+        </div>
+      </div>      
+    </div>
+  </div>   
+</div>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body> 
+
+</html>

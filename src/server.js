@@ -16,6 +16,10 @@ const page = (res, page) => res.sendFile(path.resolve(`client/src/gui/${page}.ht
 app.get('/', (req, res) => page(res, 'index'));
 app.get('/injuries', (req, res) => page(res, 'injuries'));
 app.get('/stats', (req, res) => page(res, 'stats'));
+app.get('/playoffs', (req, res) => page(res, 'playoffs'));
+app.get('/goalies', (req, res) => page(res, 'goalies'));
+app.get('/about', (req, res) => page(res, 'about'));
+app.get('/standings', (req, res) => page(res, 'standings'));
 
 const getFilePath = (file) => `./tmp/${file}.json`;
 const get = (name, res) => {

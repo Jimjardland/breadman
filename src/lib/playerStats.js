@@ -69,10 +69,15 @@ export default (sort) => {
 	}
 
 	const promise = new Promise ((resolve, reject) => {
-		request(url, (err, resp, body) => {
-			const json = setUniqueStats(JSON.parse(body))
-			resolve(sorting(json, sort));
-		});
+		try {
+			request(url, (err, resp, body) => {
+				const json = setUniqueStats(JSON.parse(body))
+				resolve(sorting(json, sort));
+			});
+		} catch (err) {
+			reject();
+			console.log(err);
+		}
 	});
 
 	return promise;

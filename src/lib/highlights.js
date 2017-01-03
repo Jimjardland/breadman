@@ -57,9 +57,14 @@ export default () => {
 	}
 
 	const promise = new Promise((resolve, reject) => {
-		request(url, (err, resp, body) => {
-			resolve(getHighlightsUrls(JSON.parse(body)))
-		});
+		try {
+			request(url, (err, resp, body) => {
+				resolve(getHighlightsUrls(JSON.parse(body)))
+			});
+		} catch (err) {
+			console.log(err);
+			reject();
+		}
 	});
 
 	return promise;
