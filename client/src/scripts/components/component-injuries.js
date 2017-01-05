@@ -4,9 +4,7 @@ $(document).ready(function () {
 
 	if(components.exists) {
 		$.each(components, function (index, component) {
-			nhl.ajax.get('/api/injuries').done(function (data) {
-				data = JSON.parse(data);
-				console.log(data);
+			nhl.ajax.getAndCacheOrGetFromCache('/api/injuries', 'injuries').done(function (data) {
 				$(component).nhlTemplate({
 					templateName: 'injuries',
 					data: data,

@@ -1,6 +1,5 @@
 (function () {
 'use strict';
-	console.log('hä');
 	nhl.component = {
 		get: function (name) {
 			var component = $('[data-component="' + name + '"]');

@@ -29,33 +29,27 @@
     <table class="table table-striped">
     <thead>
       <tr>
-        <th data-toggle="tooltip" data-placement="top" title="just the tip">Player</th>
-        <th data-toggle="tooltip" data-placement="top" title="just the tip">Team</th>
-        <th data-toggle="tooltip" data-placement="top" title="just the tip">Pos</th>
-        <th data-toggle="tooltip" data-placement="top" title="just the tip">Gp</th>
-        <th data-toggle="tooltip" data-placement="top" title="just the tip">G</th>
-        <th data-toggle="tooltip" data-placement="top" title="just the tip">A</th>
-        <th data-toggle="tooltip" data-placement="top" title="just the tip">P</th>
-        <th data-toggle="tooltip" data-placement="top" title="just the tip">penaltiesPerSixty</th>
-        <th data-toggle="tooltip" data-placement="top" title="just the tip">pointsPerSixty</th>
-        <th data-toggle="tooltip" data-placement="top" title="just the tip">FsPoints</th>
-        <th data-toggle="tooltip" data-placement="top" title="just the tip">X</th>
+        <th></th>
+        <th data-toggle="tooltip" data-placement="top" title="Team">Team</th>
+        <th data-toggle="tooltip" data-placement="top" title="Games played">GP</th>
+        <th data-toggle="tooltip" data-placement="top" title="Wins - Losses - OT Losses">Record</th>
+        <th data-toggle="tooltip" data-placement="top" title="Points">PTS</th>
+        <th data-toggle="tooltip" data-placement="top" title="Point percentage">PTS%</th>
+        <th data-toggle="tooltip" data-placement="top" title="Goals for - Goals against">GF-GA</th>
+        <th data-toggle="tooltip" data-placement="top" title="just the tip">Streak</th>
       </tr>
     </thead>
     <tbody>
-     {{#each data}}
+     {{#each .}}
       <tr>
-       <td>{{playerName}}</td>
-        <td class="small-logo {{helperLowerCase playerTeamsPlayedFor}}"></td>
-        <td>{{playerPositionCode}}</td>
+        <td class="small-logo {{helperLowerCase team.name}}"></td>
+        <td class="">{{team.name}}</td>
         <td>{{gamesPlayed}}</td>
-        <td>{{goals}}</td>
-        <td>{{assists}}</td>
+        <td>{{leagueRecord.wins}}-{{leagueRecord.losses}}-{{leagueRecord.ot}}</td>
         <td>{{points}}</td>
-        <td>{{penaltiesPerSixty}}</td>
-        <td>{{pointsPerSixty}}</td>
-        <td>{{fsPoints}}</td>
-        <td>dasdadss</td>
+        <td>{{pointPercentage}}</td>
+        <td>{{goalsScored}}-{{goalsAgainst}}</td>
+        <td>{{streak.streakCode}}</td>
       </tr>
       {{/each}}
     </tbody>
