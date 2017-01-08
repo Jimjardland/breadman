@@ -1,31 +1,9 @@
-// $full-width: 100%;
-// $main-padding: 2rem;
-// $super-padding: $main-padding * 2;
-
-// @import "mixins";
 @import "teams";
 
 body{
 padding-top: 70px !important;
 }
 
-.home{
-    background-image: url("../img/bhawks.png");
-    background-repeat: no-repeat; 
-    background-size: contain;
-    height: 100px;
-    width: 100px;
-    display:inline-block;
-}
-.away{
-    background-image: url("../img/dallas.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    height: 100px;
-    width: 100px;
-    display: inline-block;
- 
-}
 .goalie{
     height: auto;
     width: auto;
@@ -52,16 +30,16 @@ padding-top: 70px !important;
     width: auto !important;
 }
 .date-container{
-      border-bottom: 1px solid black;
-      padding: 0 0 2em 0;
-      margin: 0 0 4em 0;
+      border-top: 1px solid black;
+      padding: 2em 0 0 0;
+      margin: 2em 0 3em 0;
       height: 26;
 }
 .team-container{
     //fixa höjd
-    border-bottom: 1px solid black;
-      padding: 2em 0 2em 0;
-      margin: 0 0 5em 0;
+    border-top: 1px solid black;
+      padding: 2em 0 0 0;
+      margin: 2em 0 3em 0;
 }
 .not-played{
     opacity: 0.3;
@@ -108,8 +86,7 @@ padding-top: 70px !important;
     display:inline-block;
 }
 .show-all{ 
-  display: inline-block;
-    float: left;
+  margin: 18px 0 0 0;
 }
 .sort-by{
   margin: 0 0.5em 0 0;
@@ -144,6 +121,9 @@ padding-top: 70px !important;
     width: 200px;
     
 }
+.center-button{
+  position: relative;
+}
 .alert-success{
     color: black !important;
     background-color: #3c763d !important;
@@ -157,9 +137,6 @@ padding-top: 70px !important;
 }
 .matchup{
     margin: 1em 0 1em 0;
-}
-.date{
-  display: inline-block;
 }
 /*???*/
 .drop{
@@ -177,84 +154,11 @@ padding-top: 70px !important;
       margin: 5px;
     }
   .center-button{
+    display: relative;
     text-align: center;
     margin: 0 auto;
   }
   .show-all{
     float: none;
   }
-}
-
-
-.round {
-  float: left;
-  display: block;
-}
-.round.r-of-4 {
-  display: block;
-}
-.round.r-of-2 {
-  margin-top: 25px;
-}
-.bracket-game {
-  max-width: 125px;
-  margin: 10px 0;
-}
-.player {
-  min-width: 100px;
-  border: 1px solid #AAA;
-  padding-left: 10px;
-}
-.player.top {
-  border-radius: 3px 3px 0 0;
-}
-.player.bot {
-  border-radius: 0 0 3px 3px;
-}
-.player .score {
-  display: inline;
-  float: right;
-  border-left: 1px solid #AAA;
-  padding-left: 10px;
-  padding-right: 10px;
-  background: #EEE;
-}
-.player.win {
-  background-color: #B8F2B8;
-}
-.player.loss {
-  background-color: #F2B8B8;
-}
-.connectors {
-  float: left;
-  min-width: 35px;
-}
-.connectors.r-of-2 .top-line {
-  position: relative;
-  top: 30px;
-  width: 17px;
-  border: 1px solid #AAA;
-}
-.connectors.r-of-2 .bottom-line {
-  position: relative;
-  top: 81px;
-  width: 17px;
-  border: 1px solid #AAA;
-}
-.connectors.r-of-2 .vert-line {
-  position: relative;
-  top: 26px;
-  left: -16px;
-  height: 55px;
-  border-right: 2px solid #AAA;
-}
-.connectors.r-of-2 .next-line {
-  position: relative;
-  top: -4px;
-  left: 17px;
-  width: 17px;
-  border: 1px solid #AAA;
-}
-.clear {
-  clear: both;
 }
