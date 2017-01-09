@@ -1,5 +1,6 @@
 import express from 'express';
 import timerjobs from './lib/timerjobs';
+import sortStats from './lib/sortStats';
 import fs from 'fs';
 import moment from 'moment';
 import path from 'path';
@@ -22,25 +23,22 @@ app.get('/about', (req, res) => page(res, 'about'));
 app.get('/standings', (req, res) => page(res, 'standings'));
 
 const getFilePath = (file) => `./tmp/${file}.json`;
-const get = (name, res) => {
- 	const readable = fs.createReadStream(getFilePath(name));
-    readable.pipe(res);
+const get = (name, res) => fs.createReadStream(getFilePath(name)).pipe(res);
+const statsSorting = (json, res, req) => { 
+	fs.readFile(getFilePath(json), 'utf8', (err, data) => {
+	  const stats = res.json(sortStats(JSON.parse(data), { sort: req.query.sortOrder, start: req.query.startPage, limit: req.query.limit }));
+	});
 }
 
 router.get('/injuries', (req, res) => get('injuries', res));
 router.get('/goaliesInForm', (req, res) => get('goaliesInForm', res));
-router.get('/getStats', (req, res) => get('playerStats', res));
+router.get('/getStats', (req, res) => statsSorting('playerStats', res, req));
 router.get('/highlights', (req, res) => get('highlights', res));
 router.get('/ifPlayOffsWouldStartToday', (req, res) => get('playOff', res));
 router.get('/startingGoalies', (req, res) => get('startingGoalies', res));
 router.get('/wildcardStandings', (req, res) => get('wildcardStandings', res));
 router.get('/divisionStandings', (req, res) => get('divisionStandings', res));
 
-
-
-router.get('/drafteePoints', (req, res) => {
-	//Plocka upp från hockeyDb draft år. Enda vi kan gå på är namn. Ta reda på problem det kan skapa
-});
 
 
 

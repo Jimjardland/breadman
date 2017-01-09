@@ -12,58 +12,13 @@ export default (sort) => {
 			//full strength points
 			player.fsPoints = player.points - player.ppPoints - player.shPoints;
 			//points per 60 minutes of icetime
-			player.pointsPerSixty = ((player.pointsPerGame / (player.timeOnIcePerGame / 60)) * 60).toFixed(1);
-			//Penalties per 60 minutes of ice time
-			player.PenaltyMinutesPerGame = player.penaltyMinutes / player.gamesPlayed;
-			player.penaltiesPerSixty = ((player.PenaltyMinutesPerGame / (player.timeOnIcePerGame / 60)) * 60).toFixed(1);
+			if(player.gamesPlayed > 1) {
+				player.pointsPerSixty = parseInt(((player.pointsPerGame / (player.timeOnIcePerGame / 60)) * 60).toFixed(1));
+				//Penalties per 60 minutes of ice time
+				player.PenaltyMinutesPerGame = player.penaltyMinutes / player.gamesPlayed;
+				player.penaltiesPerSixty = parseInt(((player.PenaltyMinutesPerGame / (player.timeOnIcePerGame / 60)) * 60).toFixed(1));
+			}
 		}
-
-		return json;
-
-
-
-
-	}
-
-	const sortByPointsPerSixty = (a, b) => {
-	  if (a.PointsPerSixty < b.PointsPerSixty) {
-	    return 1;
-	  }
-	  if (a.PointsPerSixty > b.PointsPerSixty) {
-	    return -1;
-	  }
-	  return 0;
-	}
-
-	const sortByFsPoints = (a, b) => {
-	  if (a.fsPoints < b.fsPoints) {
-	    return 1;
-	  }
-	  if (a.fsPoints > b.fsPoints) {
-	    return -1;
-	  }
-	  return 0;
-	}
-
-	const sorting = (json, sort) => {
-		//var retVal = json;
-
-		// if(sort) {
-		// 	switch(sort) {
-		// 		case 'fspoints':
-		// 			console.log('sorting by fsPoints');
-		// 			json = json.sort(sortByFsPoints);
-		// 			break;
-		// 		case 'pointspersixty':
-		// 			console.log('sorting by pointsPerSixty');
-		// 			json = json.sort(sortByFsPoints);
-		// 			break;
-		// 		default:
-		// 			console.log('default');
-		// 			json = json;
-		// 			break;
-		// 	}
-		// }
 
 		return json;
 	}
@@ -72,7 +27,7 @@ export default (sort) => {
 		try {
 			request(url, (err, resp, body) => {
 				const json = setUniqueStats(JSON.parse(body))
-				resolve(sorting(json, sort));
+				resolve(json);
 			});
 		} catch (err) {
 			reject();

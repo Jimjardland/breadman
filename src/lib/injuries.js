@@ -17,12 +17,14 @@ export default () => {
 	}
 	const promise = new Promise ((resolve, reject) => {
 		jsdom.env(url, [jquery], (err, window) => {
-			const retVal = [],
-			$ = window.$
+			if(window)	{
+				const retVal = [],
+				$ = window.$
 
-			ajaxGet($, restUrl).then(data => {
-				resolve(data);
-			});
+				ajaxGet($, restUrl).then(data => {
+					resolve(data);
+				});
+			}
   		});
 	});
 
