@@ -74,9 +74,23 @@ padding-top: 70px !important;
 .small-logo{
     background-repeat: no-repeat;
     background-size: contain;
-    display: inline-block;
     width: 30px;
     height: 30px;
+    margin-left: 100px;
+}
+.playoffs-logo{
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+    width: 90px !important;
+    height: 90px !important;
+    margin: 0 0 10px 0 !important;
+}
+.playoffs-left{
+  float: left !important;
+}
+.playoffs-right{
+  float: right !important;
 }
 .highlight{
     background-repeat: no-repeat;
@@ -87,6 +101,7 @@ padding-top: 70px !important;
 }
 .show-all{ 
   margin: 18px 0 0 0;
+  float: left;
 }
 .sort-by{
   margin: 0 0.5em 0 0;
@@ -159,6 +174,6 @@ padding-top: 70px !important;
     margin: 0 auto;
   }
   .show-all{
-    float: none;
+  float: none;
   }
 }

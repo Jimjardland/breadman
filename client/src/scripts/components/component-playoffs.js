@@ -7,7 +7,7 @@ $(document).ready(function () {
 			nhl.ajax.getAndCacheOrGetFromCache('/api/ifplayoffswouldstarttoday', 'playoffs').done(function (data) {
 				var setClasses = function () {
 					$(component).find('.team-name').each(function () {
-						$(this).addClass($(this).text().toLowerCase() + ' small-logo');
+						$(this).addClass($(this).text().toLowerCase() + ' playoffs-logo');
 						$(this).text('');
 					});
 				};
