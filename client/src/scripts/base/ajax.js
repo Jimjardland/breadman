@@ -7,7 +7,8 @@
 
 			if(storageData === null) {
 				this.get(url).then(function (data) {
-					data = JSON.parse(data);
+					if(typeof(data) === 'string') data = JSON.parse(data);
+					//;
 					console.log(data.nextUpdate);
 					nhl.cache.setWithExpiration(key, data.items, data.nextUpdate);
 					def.resolve(data.items);

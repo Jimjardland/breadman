@@ -13,10 +13,10 @@ export default (sort) => {
 			player.fsPoints = player.points - player.ppPoints - player.shPoints;
 			//points per 60 minutes of icetime
 			if(player.gamesPlayed > 1) {
-				player.pointsPerSixty = parseInt(((player.pointsPerGame / (player.timeOnIcePerGame / 60)) * 60).toFixed(1));
+				player.pointsPerSixty = parseFloat(((player.pointsPerGame / (player.timeOnIcePerGame / 60)) * 60));
 				//Penalties per 60 minutes of ice time
 				player.PenaltyMinutesPerGame = player.penaltyMinutes / player.gamesPlayed;
-				player.penaltiesPerSixty = parseInt(((player.PenaltyMinutesPerGame / (player.timeOnIcePerGame / 60)) * 60).toFixed(1));
+				player.penaltiesPerSixty = parseFloat(((player.PenaltyMinutesPerGame / (player.timeOnIcePerGame / 60)) * 60));
 			}
 		}
 
