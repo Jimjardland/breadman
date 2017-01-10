@@ -1,5 +1,5 @@
 <div class="table-responsive">
-        <h2>Stats</h2>
+        <h2>Standings</h2>
         <div class="dropdown drop">
           <button class="btn btn-default sort-by dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
             Sort by
@@ -21,20 +21,20 @@
         <th data-toggle="tooltip" data-placement="top" title="Points">PTS</th>
         <th data-toggle="tooltip" data-placement="top" title="Point percentage">PTS%</th>
         <th data-toggle="tooltip" data-placement="top" title="Goals for - Goals against">GF-GA</th>
-        <th data-toggle="tooltip" data-placement="top" title="just the tip">Streak</th>
+        <th data-toggle="tooltip" data-placement="top" title="Current streak">Streak</th>
       </tr>
     </thead>
     <tbody>
      {{#each .}}
       <tr>
-        <td class="small-logo {{helperLowerCase team.name}}"></td>
-        <td class="">{{team.name}}</td>
-        <td>{{gamesPlayed}}</td>
-        <td>{{leagueRecord.wins}}-{{leagueRecord.losses}}-{{leagueRecord.ot}}</td>
-        <td>{{points}}</td>
-        <td>{{pointPercentage}}</td>
-        <td>{{goalsScored}}-{{goalsAgainst}}</td>
-        <td>{{streak.streakCode}}</td>
+        <td  data-toggle="tooltip" data-placement="top" title="{{team.name}}" class="small-logo {{helperLowerCase team.name}}"></td>
+        <td data-toggle="tooltip" data-placement="top" title="Team">{{team.name}}</td>
+        <td data-toggle="tooltip" data-placement="top" title="Games played">{{gamesPlayed}}</td>
+        <td data-toggle="tooltip" data-placement="top" title="Wins - Losses - OT Losses">{{leagueRecord.wins}}-{{leagueRecord.losses}}-{{leagueRecord.ot}}</td>
+        <td data-toggle="tooltip" data-placement="top" title="Points">{{points}}</td>
+        <td data-toggle="tooltip" data-placement="top" title="Point percentage">{{pointPercentage}}</td>
+        <td data-toggle="tooltip" data-placement="top" title="Goals for - Goals against">{{goalsScored}}-{{goalsAgainst}}</td>
+        <td data-toggle="tooltip" data-placement="top" title="Current streak">{{streak.streakCode}}</td>
       </tr>
       {{/each}}
     </tbody>
