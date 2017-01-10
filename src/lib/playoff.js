@@ -52,13 +52,22 @@ export default () => {
 		const conferenceTop = sortConferenceLeaders(retVal.divisionLeaders[settings.conference].teams)
 		const matchUp = (team1, team2) => ({ team1, team2 });
 
-		return [
-			matchUp(conferenceTop[0], retVal.wildCard[settings.conference][1]),
-			matchUp(retVal.divisionLeaders[settings.conference][settings.division2][1], retVal.divisionLeaders[settings.conference][settings.division2][2]),
-			matchUp(conferenceTop[1], retVal.wildCard[settings.conference][0]),
-			matchUp(retVal.divisionLeaders[settings.conference][settings.division1][1], retVal.divisionLeaders[settings.conference][settings.division1][2])
-			
-		];
+		if(conferenceTop[0].team.division.name === settings.division2) {
+			return [
+				matchUp(conferenceTop[0], retVal.wildCard[settings.conference][1]),
+				matchUp(retVal.divisionLeaders[settings.conference][settings.division2][1], retVal.divisionLeaders[settings.conference][settings.division2][2]),
+				matchUp(conferenceTop[1], retVal.wildCard[settings.conference][0]),
+				matchUp(retVal.divisionLeaders[settings.conference][settings.division1][1], retVal.divisionLeaders[settings.conference][settings.division1][2])
+			];
+
+		} else {
+			return [
+				matchUp(retVal.divisionLeaders[settings.conference][settings.division2][1], retVal.divisionLeaders[settings.conference][settings.division2][2]),
+				matchUp(conferenceTop[1], retVal.wildCard[settings.conference][0]),
+				matchUp(retVal.divisionLeaders[settings.conference][settings.division1][1], retVal.divisionLeaders[settings.conference][settings.division1][2]),
+				matchUp(conferenceTop[0], retVal.wildCard[settings.conference][1])
+			];
+		}
 	}
 
 	const sortConferenceLeaders = (conference) => {

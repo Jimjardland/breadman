@@ -4,10 +4,18 @@ $(document).ready(function () {
 
 	if(components.exists) {
 		$.each(components, function (index, component) {
+			nhl.cache.clear()
 			nhl.ajax.getAndCacheOrGetFromCache('/api/ifplayoffswouldstarttoday', 'playoffs').done(function (data) {
+				console.log(data);
 				var setClasses = function () {
-					$(component).find('.team-name').each(function () {
+					$(component).find('.team-name').each(function (i) {
 						$(this).addClass($(this).text().toLowerCase() + ' playoffs-logo');
+
+						if(i > 10) {
+							$(this).addClass('playoffs-right');
+						} else {
+							$(this).addClass('playoffs-left');
+						}
 						$(this).text('');
 					});
 				};
@@ -15,7 +23,8 @@ $(document).ready(function () {
 				var formatData = function (data) {
 					var retVal = [];
 
-					pushConference(data.eastern, retVal);
+					pushConference(data.eastern.reverse(), retVal);
+					retVal.reverse();
 					pushConference(data.western, retVal);
 				
 					return retVal;
