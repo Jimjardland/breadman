@@ -34,15 +34,15 @@ export default () => {
 
 				const setMatchUps = (team) => {
 					container.find(`.goalie.${team}`).each(function (i) {
-						const text = $(this).text().replace(/\\/g, ''),
-							markup = $('<div>' + text.substring(text.indexOf('("') + 3, text.lastIndexOf('");')).trim() + '</div>'),
-							imgUrl = getAttr(markup, 'img.headshot', 'src'),
-							title = getText(markup, 'h5 a'),
+						var curr = $(this);
+						const imgUrl = getAttr(curr, 'img.headshot', 'src'),
+							title = getText(curr, 'h5 a'),
 							goalie = {
 								title: title,
-								status: getText(markup, 'dl dt'),
-								description: getText(markup, 'p'),
-								team: getAttr(markup, 'span.logo', 'title'),
+								status: $(curr.find('dl dt').get(0)).text(),
+								date: $(curr.find('dl dt').get(1)).text(),
+								description: getText(curr, 'p'),
+								team: getAttr(curr, 'span.logo', 'title'),
 								img: getPath(title.replace(/ /g, ''))
 							}
 
