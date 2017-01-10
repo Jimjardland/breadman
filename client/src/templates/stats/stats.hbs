@@ -1,5 +1,10 @@
 <div class="table-responsive">
         <h2>Stats</h2>
+        <select class="selectpicker ">
+          <option>Mustard</option>
+          <option>Ketchup</option>
+          <option>Relish</option>
+        </select>
          <div class="dropdown drop">
           <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
             Season
@@ -29,34 +34,52 @@
     <table class="table table-striped">
     <thead>
       <tr>
-        <th data-toggle="tooltip" data-placement="top" title="just the tip">Player</th>
-        <th data-toggle="tooltip" data-placement="top" title="just the tip">Team</th>
-        <th data-toggle="tooltip" data-placement="top" title="just the tip">Pos</th>
-        <th data-toggle="tooltip" data-placement="top" title="just the tip">Gp</th>
-        <th data-toggle="tooltip" data-placement="top" title="just the tip">G</th>
-        <th data-toggle="tooltip" data-placement="top" title="just the tip">A</th>
-        <th data-toggle="tooltip" data-placement="top" title="just the tip">P</th>
-        <th data-toggle="tooltip" data-placement="top" title="just the tip">penaltiesPerSixty</th>
-        <th data-toggle="tooltip" data-placement="top" title="just the tip">pointsPerSixty</th>
-        <th data-toggle="tooltip" data-placement="top" title="just the tip">FsPoints</th>
-        <th data-toggle="tooltip" data-placement="top" title="just the tip">X</th>
+        <th data-toggle="tooltip" data-placement="top" title="Player">Player</th>
+        <th data-toggle="tooltip" data-placement="top" title="Team">Team</th>
+        <th data-toggle="tooltip" data-placement="top" title="Position">Pos</th>
+        <th data-toggle="tooltip" data-placement="top" title="Games played">Gp</th>
+        <th data-toggle="tooltip" data-placement="top" title="Goals">G</th>
+        <th data-toggle="tooltip" data-placement="top" title="Assists">A</th>
+        <th data-toggle="tooltip" data-placement="top" title="Points">P</th>
+        <th data-toggle="tooltip" data-placement="top" title="Penalty per 60 minutes of icetime">PIM/60</th>
+        <th data-toggle="tooltip" data-placement="top" title="Points per 60 minutes of icetime">P/60</th>
+        <th data-toggle="tooltip" data-placement="top" title="Points in even strength">P/ES</th>
+        <th data-toggle="tooltip" data-placement="top" title="Faceoff win percentage">FO%</th>
       </tr>
     </thead>
     <tbody>
      {{#each data}}
       <tr>
-       <td>{{playerName}}</td>
-        <td class="small-logo {{helperLowerCase playerTeamsPlayedFor}}"></td>
-        <td>{{playerPositionCode}}</td>
-        <td>{{gamesPlayed}}</td>
-        <td>{{goals}}</td>
-        <td>{{assists}}</td>
-        <td>{{points}}</td>
-        <td>{{penaltiesPerSixty}}</td>
-        <td>{{pointsPerSixty}}</td>
-        <td>{{fsPoints}}</td>
-        <td>dasdadss</td>
+       <td class="col-md-2" data-toggle="tooltip" data-placement="top" title="Player">{{playerName}}</td>
+        <td class="col-md-1 small-logo {{helperLowerCase playerTeamsPlayedFor}}" data-toggle="tooltip" data-placement="top" title="Team"></td>
+        <td class="col-md-1" data-toggle="tooltip" data-placement="top" title="Position">{{playerPositionCode}}</td>
+        <td class="col-md-1" data-toggle="tooltip" data-placement="top" title="Games played">{{gamesPlayed}}</td>
+        <td class="col-md-1" data-toggle="tooltip" data-placement="top" title="Goals">{{goals}}</td>
+        <td class="col-md-1" data-toggle="tooltip" data-placement="top" title="Assists">{{assists}}</td>
+        <td class="col-md-1" data-toggle="tooltip" data-placement="top" title="Points">{{points}}</td>
+        <td class="col-md-1" data-toggle="tooltip" data-placement="top" title="Penalty per 60 minutes of icetime">{{toFixed penaltiesPerSixty 2}}</td>
+        <td class="col-md-1" data-toggle="tooltip" data-placement="top" title="Points per 60 minutes of icetime">{{toFixed pointsPerSixty 2}}</td>
+        <td class="col-md-1" data-toggle="tooltip" data-placement="top" title="Points in even strength">{{fsPoints}}</td>
+        <td class="col-md-1" data-toggle="tooltip" data-placement="top" title="Faceoff win percentage">{{toFixed faceoffWinPctg 2}}</td>
       </tr>
       {{/each}}
     </tbody>
   </table>
+  <div class="text-center">
+      <nav aria-label="Page navigation pagination">
+        <ul class="pagination">
+            <li class="page-item">
+                <a class="page-link" data-change="prev" href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                    <span class="sr-only">Previous</span>
+                </a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" data-change="next" href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </li>
+        </ul>
+      </nav>
+    </div>

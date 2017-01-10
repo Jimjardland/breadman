@@ -6,6 +6,9 @@
 		    return string.toLowerCase();
 		});
 
+		Handlebars.registerHelper('toFixed', function (numb, fix) {
+		    return numb.toFixed(fix);
+		});
 	}
 	init();
 
