@@ -32,7 +32,8 @@ export default () => {
 				if(game.linescore.currentPeriodTimeRemaining === 'Final') {
 					gameInfo.gameFinished = true;
 					try {
-						gameInfo.url = getUrl(game.content.media.epg[2].items[0].mediaPlaybackId);
+						gameInfo.url = getUrl(game.content.media.epg[3].items[0].mediaPlaybackId);
+
 					}
 					catch (err) {
 						console.log(err);
