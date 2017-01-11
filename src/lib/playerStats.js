@@ -30,7 +30,6 @@ export default (sort) => {
 				resolve(json);
 			});
 		} catch (err) {
-			reject();
 			console.log(err);
 		}
 	});
