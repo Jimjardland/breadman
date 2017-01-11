@@ -26,5 +26,5 @@ export const formatDate = (date, format) => {
 }
 
 export const cacheDates = () => {
-	return { latestUpdate: new Date().toISOString(), nextUpdate: moment(new Date()).add(10, 'minutes').toISOString() }
+	return { latestUpdate: new Date().toISOString(), nextUpdate: moment(new Date()).add(6, 'minutes').toISOString() }
 }

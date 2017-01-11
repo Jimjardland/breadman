@@ -11,7 +11,7 @@ import { cacheDates } from './utils/timehelper';
 
 var CronJob = require('cron').CronJob;
 
-var job = new CronJob('0 */1 * * * *', function() {
+var job = new CronJob('0 */5 * * * *', function() {
 
   console.log('CronJob')
   const dates = cacheDates(),
