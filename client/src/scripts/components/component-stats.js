@@ -15,6 +15,9 @@ $(document).ready(function () {
 						callback: function () {
 							console.log('yo');
 							//$('.pagination').attr('data-current-page', query.startPage);
+							$('.selectpicker').selectpicker({
+					          
+					        });
 
 							$('[data-change="prev"]').on('click', function () {
 								if(query.startPage > 1) {
