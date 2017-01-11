@@ -8,9 +8,11 @@ export default () => {
 		 getPath = (filename) => `./img/${filename}.png`;
 
 	const download = (uri, path, callback) => {
-		request.head(uri, function(err, res, body) {
-			request(uri).pipe(fs.createWriteStream(path)).on('close', callback);
-		});
+		if(uri) {
+			request.head(uri, function(err, res, body) {
+				request(uri).pipe(fs.createWriteStream(path)).on('close', callback);
+			});
+		}
 	}
 
 	const setMatchUpArray = (length) => {
@@ -25,35 +27,42 @@ export default () => {
 	const promise = new Promise ((resolve, reject) => {
 		jsdom.env(url, [jquery], (err, window) => {
 			if(window) {
-				const retVal = [],
-				$ = window.$,
-				container = $('#matchups'),
-				getText = (markup, selector) => markup.find(selector).text(),
-				getAttr = (markup, selector, attr) => markup.find(selector).attr(attr),
-				array = setMatchUpArray(container.find('.goalie.home').length);
+				try {
+					const retVal = [],
+					$ = window.$,
+					container = $('#matchups'),
+					getText = (markup, selector) => markup.find(selector).text(),
+					getAttr = (markup, selector, attr) => markup.find(selector).attr(attr),
+					array = setMatchUpArray(container.find('.goalie.home').length);
 
-				const setMatchUps = (team) => {
-					container.find(`.goalie.${team}`).each(function (i) {
-						var curr = $(this);
-						const imgUrl = getAttr(curr, 'img.headshot', 'src'),
-							title = getText(curr, 'h5 a'),
-							goalie = {
-								title: title,
-								status: $(curr.find('dl dt').get(0)).text(),
-								date: $(curr.find('dl dt').get(1)).text(),
-								description: getText(curr, 'p'),
-								team: getAttr(curr, 'span.logo', 'title'),
-								img: getPath(title.replace(/ /g, ''))
+					const setMatchUps = (team) => {
+						container.find(`.goalie.${team}`).each(function (i) {
+							var curr = $(this);
+
+							const text = $(this).text().replace(/\\/g, ''),
+								markup = $('<div>' + text.substring(text.indexOf('("') + 3, text.lastIndexOf('");')).trim() + '</div>'),
+								imgUrl = getAttr(curr, 'img.headshot', 'src') || getAttr(markup, 'img.headshot', 'src'),
+								title = getText(curr, 'h5 a') || getText(markup, 'h5 a'),
+								goalie = {
+									title: title,
+									status: $(curr.find('dl dt').get(0)).text() || getText(markup, 'dl dt'),
+									date: $(curr.find('dl dt').get(1)).text(),
+									description: getText(curr, 'p'),
+									team: getAttr(curr, 'span.logo', 'title') || getAttr(markup, 'span.logo', 'title'),
+									img: getPath(title.replace(/ /g, ''))
+								}
+
+							if(!fs.existsSync(goalie.img)) {
+								download(imgUrl, goalie.img, () => null);
 							}
-
-						if(!fs.existsSync(goalie.img)) {
-							download(imgUrl, goalie.img, () => null);
-						}
-						array[i][team] = goalie;
-					});
+							array[i][team] = goalie;
+						});
+					}
+					setMatchUps('home');
+					setMatchUps('away');
+				} catch (err) {
+					console.log(err);
 				}
-				setMatchUps('home');
-				setMatchUps('away');
 
 				resolve(array);
 			}
