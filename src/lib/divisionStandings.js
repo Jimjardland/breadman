@@ -37,7 +37,6 @@ export default () => {
 				resolve(formatStandings(JSON.parse(body)));
 			});
 		} catch (err) {
-			reject();
 			console.log(err);
 		}
 	});

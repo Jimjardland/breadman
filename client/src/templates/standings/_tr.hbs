@@ -1,0 +1,12 @@
+    {{#each .}}
+      <tr>
+        <td data-toggle="tooltip" data-placement="top" title="{{team.name}}" class="small-logo {{helperLowerCase team.name}}"></td>
+        <td class="col-md-3" data-toggle="tooltip" data-placement="top" title="Team">{{team.name}}</td>
+        <td data-toggle="tooltip" data-placement="top" title="Games played">{{gamesPlayed}}</td>
+        <td data-toggle="tooltip" data-placement="top" title="Wins - Losses - OT Losses">{{leagueRecord.wins}}-{{leagueRecord.losses}}-{{leagueRecord.ot}}</td>
+        <td data-toggle="tooltip" data-placement="top" title="Points">{{points}}</td>
+        <td data-toggle="tooltip" data-placement="top" title="Point percentage">{{pointPercentage}}</td>
+        <td data-toggle="tooltip" data-placement="top" title="Goals for - Goals against">{{goalsScored}}-{{goalsAgainst}}</td>
+        <td data-toggle="tooltip" data-placement="top" title="Current streak">{{streak.streakCode}}</td>
+      </tr>
+      {{/each}}
