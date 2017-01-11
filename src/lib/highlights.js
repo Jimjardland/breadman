@@ -51,7 +51,6 @@ export default () => {
 			const obj = gameDay(formatDate(day.date, 'dddd MMMM Do YYYY'));
 
 			retVal.unshift(formatDay(obj, day.games));
-			console.log(formatDate(day.date, 'dddd MMMM Do YYYY'))
 
 		}
 		return retVal;
@@ -64,7 +63,6 @@ export default () => {
 			});
 		} catch (err) {
 			console.log(err);
-			reject();
 		}
 	});
 
