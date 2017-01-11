@@ -1,16 +1,14 @@
 <div class="table-responsive">
         <h2>Stats</h2>
-        <select class="selectpicker drop" data-width="100px">
-          <option value="" disabled selected>Limit</option>
-          <option>23</option>
-          <option>123</option>
-          <option>32</option>
-        </select>
-         <select class="selectpicker drop" data-width="100px">
+         <select class="selectpicker drop" id="sortby" data-width="100px">
           <option value="" disabled selected>Sort by</option>
-          <option>Mustard</option>
-          <option>Ketchup</option>
-          <option>Relish</option>
+          <option value="points">Points</option>
+          <option value="goals">Goals</option>
+          <option value="assists">Assists</option>
+          <option value="fsPoints">Points 5v5</option>
+          <option value="penaltiesPerSixty">PIM per 60</option>
+          <option value="pointsPerSixty">Points per 60</option>
+          <option value="faceoffWinPctg">Faceoff percentage</option>
         </select>
     <table class="table table-striped">
     <thead>
@@ -24,7 +22,7 @@
         <th data-toggle="tooltip" data-placement="top" title="Points">P</th>
         <th data-toggle="tooltip" data-placement="top" title="Penalty per 60 minutes of icetime">PIM/60</th>
         <th data-toggle="tooltip" data-placement="top" title="Points per 60 minutes of icetime">P/60</th>
-        <th data-toggle="tooltip" data-placement="top" title="Points in even strength">P/ES</th>
+        <th data-toggle="tooltip" data-placement="top" title="Points in even strength">P/5v5</th>
         <th data-toggle="tooltip" data-placement="top" title="Faceoff win percentage">FO%</th>
       </tr>
     </thead>
@@ -32,7 +30,7 @@
      {{#each data}}
       <tr>
        <td class="col-md-2" data-toggle="tooltip" data-placement="top" title="Player">{{playerName}}</td>
-        <td class="col-md-1 small-logo {{helperLowerCase playerTeamsPlayedFor}}" data-toggle="tooltip" data-placement="top" title="Team"></td>
+        <td class="col-md-1 small-logo {{fixTeam playerTeamsPlayedFor}}" data-toggle="tooltip" data-placement="top" title="Team"></td>
         <td class="col-md-1" data-toggle="tooltip" data-placement="top" title="Position">{{playerPositionCode}}</td>
         <td class="col-md-1" data-toggle="tooltip" data-placement="top" title="Games played">{{gamesPlayed}}</td>
         <td class="col-md-1" data-toggle="tooltip" data-placement="top" title="Goals">{{goals}}</td>

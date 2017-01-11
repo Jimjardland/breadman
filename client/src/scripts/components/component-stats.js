@@ -13,11 +13,8 @@ $(document).ready(function () {
 						templateName: 'stats',
 						data: data,
 						callback: function () {
-							console.log('yo');
-							//$('.pagination').attr('data-current-page', query.startPage);
-							$('.selectpicker').selectpicker({
-					          
-					        });
+							var selector = $('#sortby');
+							selector.selectpicker();
 
 							$('[data-change="prev"]').on('click', function () {
 								if(query.startPage > 1) {
@@ -38,6 +35,15 @@ $(document).ready(function () {
 										sortOrder: 'points'
 									});
 								}
+							});
+
+							selector.val(query.sortOrder).change();
+							selector.on('change', function () {
+								getDataAndRender({
+									startPage: 1,
+									limit: 50,
+									sortOrder: $(this).val()
+								});
 							});
 						}
 					});
