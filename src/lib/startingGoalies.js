@@ -60,11 +60,11 @@ export default () => {
 					}
 					setMatchUps('home');
 					setMatchUps('away');
+					
+					resolve(array);
 				} catch (err) {
 					console.log(err);
 				}
-
-				resolve(array);
 			}
   		});
 	});
