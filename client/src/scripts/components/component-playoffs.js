@@ -4,18 +4,15 @@ $(document).ready(function () {
 
 	if(components.exists) {
 		$.each(components, function (index, component) {
-			nhl.cache.clear()
 			nhl.ajax.getAndCacheOrGetFromCache('/api/ifplayoffswouldstarttoday', 'playoffs').done(function (data) {
 				console.log(data);
 				var setClasses = function () {
-					$(component).find('.team-name').each(function (i) {
-						$(this).addClass($(this).text().toLowerCase() + ' playoffs-logo');
+					var teamNames = $(component).find('.team-name');
+					var length = teamNames.length;
 
-						if(i > 10) {
-							$(this).addClass('playoffs-right');
-						} else {
-							$(this).addClass('playoffs-left');
-						}
+					teamNames.each(function (i) {
+						var playoffClass = i < length / 2 ? 'playoffs-left' : 'playoffs-right';
+						$(this).addClass($(this).text().toLowerCase() + ' playoffs-logo ' + playoffClass);
 						$(this).text('');
 					});
 				};
@@ -23,14 +20,14 @@ $(document).ready(function () {
 				var formatData = function (data) {
 					var retVal = [];
 
-					pushConference(data.eastern.reverse(), retVal);
+					unshiftConference(data.eastern.reverse(), retVal);
 					retVal.reverse();
-					pushConference(data.western, retVal);
+					unshiftConference(data.western, retVal);
 				
 					return retVal;
 				};
 
-				var pushConference = function (conference, container) {
+				var unshiftConference = function (conference, container) {
 					for (var i = 0; i < conference.length; i++) {
 						var matchup = conference[i];
 						container.unshift({
