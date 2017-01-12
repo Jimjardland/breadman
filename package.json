@@ -4,7 +4,9 @@
   "description": "Api for NHL stats",
   "main": "server.js",
   "scripts": {
-    "build": "babel --presets es2015 src -d _dist"
+    "build": "babel --presets es2015 src -d _dist",
+    "postinstall": "npm run build",
+    "start": "node _dist/server.js",
   },
   "author": "Jimmy Jardland",
   "license": "ISC",
