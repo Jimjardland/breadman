@@ -13,7 +13,6 @@ var CronJob = require('cron').CronJob;
 
 var job = new CronJob('0 */5 * * * *', function() {
 
-  console.log('CronJob')
   const dates = cacheDates(),
         getJson = (items) => ({ latestUpdate: dates.latestUpdate, nextUpdate: dates.nextUpdate, items }),
         getFilePath = (file) => `./tmp/${file}.json`,
