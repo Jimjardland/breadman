@@ -83,6 +83,9 @@ padding-top: 70px !important;
 .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
   padding: 8px 8px 8px 1px !important;
 }
+.table.wildcard-delimeter>tbody>tr:nth-child(2)>td{
+  border-bottom: 3px solid black;
+}
 .playoffs-logo{
     background-repeat: no-repeat;
     background-size: contain;
