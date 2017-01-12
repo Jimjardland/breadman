@@ -4,6 +4,7 @@ import sortStats from './lib/sortStats';
 import fs from 'fs';
 import moment from 'moment';
 import path from 'path';
+import http from 'http';
 
 const router = express.Router();
 const app = express();
@@ -39,8 +40,8 @@ router.get('/wildcardStandings', (req, res) => get('wildcardStandings', res));
 router.get('/divisionStandings', (req, res) => get('divisionStandings', res));
 
 
-
+const server = http.createServer(app);
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
+server.listen(PORT, () => {
 	console.log(`listening on ${PORT}`);
 })

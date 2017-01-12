@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Api for NHL stats",
   "main": "server.js",
-  "scripts": { 
+  "scripts": {
     "start": "PORT=80 node src/server.babel.js",
     "startDev": "PORT=3000 node src/server.babel.js"
   },
@@ -15,6 +15,7 @@
     "cron": "^1.2.1",
     "express": "^4.14.0",
     "fs": "0.0.1-security",
+    "http": "0.0.0",
     "jsdom": "^9.8.3",
     "mongodb": "^2.2.15",
     "path": "^0.12.7",
