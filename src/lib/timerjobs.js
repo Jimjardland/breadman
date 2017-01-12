@@ -5,7 +5,7 @@ import playerStats from './playerStats';
 import highlights from './highlights';
 import playoff from './playoff';
 import startingGoalies from './startingGoalies';
-import wildCardStandings from './wildCardStandings';
+import wildCardStandings from './wildcardStandings';
 import divisonStandings from './divisionStandings';
 import { cacheDates } from './utils/timeHelper';
 
