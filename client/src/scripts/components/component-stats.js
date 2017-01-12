@@ -6,7 +6,6 @@ $(document).ready(function () {
 		$.each(components, function (index, component) {
 			var getDataAndRender = function (query) {
 				nhl.ajax.get('/api/getStats?' + $.param(query), 'stats').then(function (data) {
-					console.log(data);
 					data = data.items;
 					$(component).empty();
 					$(component).nhlTemplate({
@@ -21,7 +20,7 @@ $(document).ready(function () {
 									getDataAndRender({
 										startPage: query.startPage - 1,
 										limit: 50,
-										sortOrder: 'points'
+										sortOrder: query.sortOrder
 									});
 								}
 							});
@@ -32,12 +31,13 @@ $(document).ready(function () {
 									getDataAndRender({
 										startPage: query.startPage + 1,
 										limit: 50,
-										sortOrder: 'points'
+										sortOrder: query.sortOrder
 									});
 								}
 							});
 
 							selector.val(query.sortOrder).change();
+							$(component).find('#sortingtext').text($('#sortby option:selected').text())
 							selector.on('change', function () {
 								getDataAndRender({
 									startPage: 1,
