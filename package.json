@@ -4,7 +4,6 @@
   "description": "Api for NHL stats",
   "main": "server.js",
   "scripts": { 
-    "postinstall": "npm run build",
     "start": "node src/server.babel.js"
   },
   "author": "Jimmy Jardland",
