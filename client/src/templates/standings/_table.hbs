@@ -1,5 +1,5 @@
 {{#each .}}
-    <table class="table table-striped wildcard-delimeter">
+    <table class="table table-striped {{#ifCond division "Wild Card"}}wildcard-delimeter{{/ifCond}}">
     {{> thead division}}
     </thead>
     <tbody>
