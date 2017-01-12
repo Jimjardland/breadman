@@ -5,7 +5,6 @@ $(document).ready(function () {
 	if(components.exists) {
 		$.each(components, function (index, component) {
 			nhl.ajax.getAndCacheOrGetFromCache('/api/highlights', 'highlights').done(function (data) {
-				console.log(data);
 				$(component).nhlTemplate({
 					templateName: 'highlights',
 					data: data,
@@ -13,7 +12,6 @@ $(document).ready(function () {
 						var spoilBtn = $(component).find('[data-spoil]');
 						$(component).find('.show-all').on('click', function () { 
 							$(this).parents('[data-container]').find('[data-spoil]').click();
-							console.log($(this).parents('[data-container]'))
 						});
 
 					    spoilBtn.on('click', function(e){ 

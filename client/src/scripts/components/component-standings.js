@@ -7,7 +7,6 @@ $(document).ready(function () {
 
 			var render = function (template, endpoint) {
 				nhl.ajax.getAndCacheOrGetFromCache('/api/' + endpoint, endpoint).done(function (data) {
-					console.log(data);
 					$(component).empty();
 					$(component).nhlTemplate({
 						templateName: template,

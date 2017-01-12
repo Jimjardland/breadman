@@ -8,13 +8,10 @@
 			if(storageData === null) {
 				this.get(url).then(function (data) {
 					if(typeof(data) === 'string') data = JSON.parse(data);
-					//;
-					console.log(data.nextUpdate);
 					nhl.cache.setWithExpiration(key, data.items, data.nextUpdate);
 					def.resolve(data.items);
 				});
 			} else {
-				console.log('from cache');
 				def.resolve(storageData.value);
 			}
 
@@ -22,7 +19,6 @@
 
 		},
 		get: function (url) {
-			console.log('y');
 			return $.ajax({
 				url: url,
 				type: 'GET',
