@@ -4,7 +4,7 @@
   "description": "Api for NHL stats",
   "main": "server.js",
   "scripts": {
-    "start": "NODE_ENV=production node ./src/server.babel.js",
+    "start": "node src/server.babel.js",
     "startDev": "PORT=3000 node src/server.babel.js"
   },
   "author": "Jimmy Jardland",
