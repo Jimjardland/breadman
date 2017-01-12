@@ -11,7 +11,7 @@
           {{#if gameFinished}}
                 <h4><a class="show-result" href="#">Show result</a></h4>
              {{else}}
-              <h4>Game not played</h4>
+              <h4 data-toggle="tooltip" data-placement="top" title="In your local time">Game starts {{hourMinute date}}</h4>
             {{/if}}
              <h4 class="spoiler"><strong>{{awayGoals}} - {{homeGoals}}</strong></h4>
           </div>
@@ -23,11 +23,13 @@
             </div>
             <!-- p>{{arena}}</p -->
         </div>
+        
         {{#if url}}
         <div class="panel-footer">
           <button type="button" class="btn btn-default" data-button="iframe" data-title="{{awayTeam}} vs {{homeTeam}} - {{arena}} - {{../../date}}" data-url="{{url}}" data-toggle="modal" data-target="#myModal">Watch highlights</button>
         </div>
         {{/if}}
+        
       </div>
     </div>     
 {{/each}}

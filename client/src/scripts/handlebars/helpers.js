@@ -18,6 +18,17 @@
 		    }
 		    return retVal;
 		});
+
+		Handlebars.registerHelper('hourMinute', function (dateString) {
+			if(moment) return moment(dateString).format('HH:mm') 
+		});
+
+		Handlebars.registerHelper('ifCond', function(v1, v2, options) {
+		  if(v1 === v2) {
+		    return options.fn(this);
+		  }
+		  return options.inverse(this);
+		});
 	}
 	init();
 
