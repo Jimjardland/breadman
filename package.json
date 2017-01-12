@@ -6,7 +6,7 @@
   "scripts": {
     "build": "babel --presets es2015 src -d _dist",
     "postinstall": "npm run build",
-    "start": "node _dist/server.js",
+    "start": "node _dist/server.js"
   },
   "author": "Jimmy Jardland",
   "license": "ISC",
