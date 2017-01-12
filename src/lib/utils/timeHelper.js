@@ -17,6 +17,7 @@ export const todayAndDaysBack = (daysBack, format) => {
 	const retVal = (today, daysBack) => ({ today, daysBack });
 	const d = new Date();
 	d.setDate(d.getDate() - daysBack);
+	d.setHours(d.getHours() - 6);
 
 	return retVal(moment(new Date()).format(format), moment(d).format(format));
 }
