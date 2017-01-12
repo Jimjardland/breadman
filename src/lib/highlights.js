@@ -1,5 +1,5 @@
 import request from 'request';
-import { todayAndDaysBack, formatDate } from './utils/timehelper'
+import { todayAndDaysBack, formatDate } from './utils/timeHelper'
 
 export default () => {
 	const date = todayAndDaysBack(3, 'YYYY-MM-DD');

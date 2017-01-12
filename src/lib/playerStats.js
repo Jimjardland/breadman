@@ -1,5 +1,5 @@
 import request from 'request';
-import { getSeason } from './utils/timehelper'
+import { getSeason } from './utils/timeHelper'
 
 
 export default (sort) => {

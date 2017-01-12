@@ -7,7 +7,7 @@ import playoff from './playoff';
 import startingGoalies from './startingGoalies';
 import wildCardStandings from './wildCardStandings';
 import divisonStandings from './divisionStandings';
-import { cacheDates } from './utils/timehelper';
+import { cacheDates } from './utils/timeHelper';
 
 var CronJob = require('cron').CronJob;
 
