@@ -20,7 +20,8 @@ export default () => {
 					homeGoals: game.teams.home.score,
 					awayGoals: game.teams.away.score,
 					homeWin: game.teams.home.score > game.teams.away.score,
-					arena: game.venue.name
+					arena: game.venue.name,
+					date: game.gameDate
 				};
 
 				if(gameInfo.homeWin) {
