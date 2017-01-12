@@ -1,10 +1,11 @@
 {
-  "name": "nhl-stats-api",
+  "name": "Breadman",
   "version": "1.0.0",
   "description": "Api for NHL stats",
   "main": "server.js",
   "scripts": { 
-    "start": "node src/server.babel.js"
+    "start": "PORT=80 node src/server.babel.js",
+    "startDev": "PORT=3000 node src/server.babel.js"
   },
   "author": "Jimmy Jardland",
   "license": "ISC",
