@@ -14,7 +14,8 @@ var handlebars = require('gulp-handlebars'),
     notify = require('gulp-notify'),
     cache = require('gulp-cache'),
     livereload = require('gulp-livereload'),
-    del = require('del');
+    del = require('del'),
+    sprite = require('gulp-sprite-generator');
 
 
 
@@ -59,6 +60,20 @@ gulp.task('scripts', function() {
     .pipe(uglify())
     .pipe(gulp.dest('./_dist/build/js/'))
     .pipe(livereload());
+});
+
+gulp.task('sprites', function() {
+    var spriteOutput;
+
+    spriteOutput = gulp.src("./_dist/build/scss/*.css")
+        .pipe(sprite({
+            baseUrl:         "./img",
+            spriteSheetName: "sprite.png",
+            spriteSheetPath: "../../../_dist/build/image"
+        }));
+
+    spriteOutput.css.pipe(gulp.dest("./_dist/build/scss"));
+    spriteOutput.img.pipe(gulp.dest("./_dist/build/image"));
 });
 
 
