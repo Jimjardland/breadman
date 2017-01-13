@@ -79,13 +79,11 @@ padding-top: 70px !important;
 }
 .mail-me{
   margin: 10px 0 0 0;
+  position: absolute;
+  right: 20%;
 }
 .navbar-brand{
-  background-image: url("../../../gui/img/puck.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  height: 40px;
-  width: 40px;
+  background-color: black;
 }
 .sorting-by{
   margin-top: 20px;
@@ -94,17 +92,20 @@ padding-top: 70px !important;
 .likely{
   margin: 0 auto;
   background-color: #ffeb0f;
-  width: 30%;
+  width: 100px;
+  border-radius: 25px;
 }
 .confirmed{
   margin: 0 auto;
   background-color: #1aa830;
-  width: 30%;
+  width: 100px;
+  border-radius: 25px;
 }
 .unconfirmed{
   margin: 0 auto;
   background-color: #f40909;
-  width: 30%;
+  width: 100px;
+  border-radius: 25px;
 }
 .table>caption+thead>tr:first-child>td, .table>caption+thead>tr:first-child>th, .table>colgroup+thead>tr:first-child>td, .table>colgroup+thead>tr:first-child>th, .table>thead:first-child>tr:first-child>td, .table>thead:first-child>tr:first-child>.th-placeholder {
     padding-left: 30px !important;
@@ -159,11 +160,7 @@ padding-top: 70px !important;
     display: inline-block;
     vertical-align: middle;
 }
-.goalie-team{
-    height: 120px;
-    margin: 5px;
-    
-}
+
 .goalie-team{
     background-repeat: no-repeat;
     background-size: contain;
@@ -196,6 +193,12 @@ padding-top: 70px !important;
   overflow: visible;
   margin: 15px;
 }
+.first-datecontainer{
+      border: none;
+      padding: 1em 0 0 0;
+      margin: 0 0 3em 0;
+}
+
 @media (max-width: 480px) {
     .iframes{
       height: auto;
@@ -205,6 +208,11 @@ padding-top: 70px !important;
       height: 70px;
       width: 70px;
       margin: 5px;
+      float: none;
+    }
+    .goalie-name{
+      font-size: 90%;
+        margin: 1em 0 1em 0;
     }
   .center-button{
     display: relative;
@@ -214,4 +222,9 @@ padding-top: 70px !important;
   .show-all{
   float: none;
   }
+  .mail-me{
+  margin-left: 10px;
+  position: relative;
+  right: 0;
+}
 }
