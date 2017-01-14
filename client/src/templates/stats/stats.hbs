@@ -1,10 +1,10 @@
 <div class="table-responsive">
-        <h2>Stats</h2>
+      <div class="row">
+        <h2 class="text-center">Stats</h2>
         <div class="container">
-          <div class="col-md-6 col-xs-12 text-center">
-            <h4 class="text-center sorting-by">Sorting by: <span id="sortingtext"></span></h4>
-          </div>
-          <div class="col-md-6 col-xs-12 text-right">   
+          <div class="row"></div>
+          <div class="text-left">   
+            <h4>Sorting by:</h4>
             <select class="selectpicker drop" id="sortby" data-width="170px">
               <option value="" disabled>Sort by</option>
               <option value="points">Points</option>
@@ -16,6 +16,7 @@
               <option value="faceoffWinPctg">Faceoff percentage</option>
             </select>
           </div>
+        </div>
         </div>
     <table class="table table-striped">
     <thead>
@@ -37,7 +38,7 @@
      {{#each data}}
       <tr>
        <td class="col-md-2" data-toggle="tooltip" data-placement="top" title="Player">{{playerName}}</td>
-        <td class="col-md-1 small-logo {{fixTeam playerTeamsPlayedFor}}" data-toggle="tooltip" data-placement="top" title="Team"></td>
+        <td class="col-md-1 small-logo logo-small {{fixTeam playerTeamsPlayedFor}}" data-toggle="tooltip" data-placement="top" title="Team"></td>
         <td class="col-md-1" data-toggle="tooltip" data-placement="top" title="Position">{{playerPositionCode}}</td>
         <td class="col-md-1" data-toggle="tooltip" data-placement="top" title="Games played">{{gamesPlayed}}</td>
         <td class="col-md-1" data-toggle="tooltip" data-placement="top" title="Goals">{{goals}}</td>

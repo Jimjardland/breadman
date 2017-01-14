@@ -10,20 +10,7 @@ padding-top: 70px !important;
     display: inline-block;
     border-radius: 10px;
 }
-.goalie-team{
-    height: 70px;
-    width: 70px;
-    padding: 0 10px 0 0;
-    margin: 10px 0 0 0;
-    float: right;
-}
-.goalie-team2{
-    height: 70px;
-    width: 70px;
-    padding: 0 10px 0 0;
-    margin: 10px 0 0 0;
-    float: left;
-}
+
 .random{
    margin-left: 0 !important;
     margin-right: 0 !important;
@@ -66,16 +53,14 @@ padding-top: 70px !important;
     background-repeat: no-repeat;
     background-size: contain;
     display: inline-block;
-    width: 50px;
-    height: 50px;
+    width: 100px;
+    height: 100px;
     margin-right: 10px;
     margin-bottom: -12px;
 }
 .small-logo{
     background-repeat: no-repeat;
     background-size: contain;
-    width: 30px !important;
-    height: 30px;
 }
 .mail-me{
   margin: 10px 0 0 0;
@@ -90,25 +75,27 @@ padding-top: 70px !important;
   float: right;
 }
 .likely{
-  margin: 0 auto;
-  background-color: #ffeb0f;
-  width: 100px;
-  border-radius: 25px;
+    color: #8a6d3b;
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+}
+.goalie-status {
+    padding: 5px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px
 }
 .confirmed{
-  margin: 0 auto;
-  background-color: #1aa830;
-  width: 100px;
-  border-radius: 25px;
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
 }
 .unconfirmed{
-  margin: 0 auto;
-  background-color: #f40909;
-  width: 100px;
-  border-radius: 25px;
+    color: black !important;
+    background-color: #a94442 !important;
 }
 .table>caption+thead>tr:first-child>td, .table>caption+thead>tr:first-child>th, .table>colgroup+thead>tr:first-child>td, .table>colgroup+thead>tr:first-child>th, .table>thead:first-child>tr:first-child>td, .table>thead:first-child>tr:first-child>.th-placeholder {
-    padding-left: 30px !important;
+  padding-left: 30px !important;
 }
 .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
   padding: 8px 8px 8px 1px !important;
@@ -120,8 +107,8 @@ padding-top: 70px !important;
     background-repeat: no-repeat;
     background-size: contain;
     display: inline-block;
-    width: 90px !important;
-    height: 90px !important;
+    width: 100px !important;
+    height: 100px !important;
     margin: 0 0 10px 0 !important;
 }
 .playoffs-left{
@@ -166,8 +153,9 @@ padding-top: 70px !important;
     background-size: contain;
     display: inline-block;
     vertical-align: middle;
-    height: 135px;
-    width: 200px;
+    height: 100px;
+    width: 100px;
+    padding: 0 10px 0 0;
     
 }
 .center-button{
@@ -187,13 +175,8 @@ padding-top: 70px !important;
 .matchup{
     margin: 1em 0 1em 0;
 }
-/*???*/
-.drop{
-  float: right !important;
-  overflow: visible;
-  margin: 15px;
-}
-.first-datecontainer{
+
+.first-container{
       border: none;
       padding: 1em 0 0 0;
       margin: 0 0 3em 0;
@@ -205,10 +188,8 @@ padding-top: 70px !important;
       width: auto;
     }
     .goalie-team{
-      height: 70px;
-      width: 70px;
-      margin: 5px;
       float: none;
+      margin-bottom: 5px;
     }
     .goalie-name{
       font-size: 90%;

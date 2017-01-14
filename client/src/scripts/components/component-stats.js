@@ -37,7 +37,6 @@ $(document).ready(function () {
 							});
 
 							selector.val(query.sortOrder).change();
-							$(component).find('#sortingtext').text($('#sortby option:selected').text())
 							selector.on('change', function () {
 								getDataAndRender({
 									startPage: 1,

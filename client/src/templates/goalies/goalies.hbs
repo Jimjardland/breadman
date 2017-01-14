@@ -1,5 +1,5 @@
   {{#each .}}
-  <div class="container text-center team-container">
+  <div class="container text-center team-container {{#ifCond @index 0}}first-container{{/ifCond}}">
       <div class="row">
           <h3 class="matchup">{{away.team}} at {{home.team}}</h3>
       </div>
@@ -11,11 +11,11 @@
       <div class="panel panel-default text-center">
         <div class="panel-heading">      
           <h3 class="goalie-name">{{away.title}}</h3>
-          <div class="{{helperLowerCase away.status}}" role="alert">{{away.status}}</div>
+          <div class="{{helperLowerCase away.status}} goalie-status" role="alert">{{away.status}}</div>
         </div>
         <div class="panel-body">
             <div class="goalies">
-                <div class="goalie-team {{helperLowerCase away.team}}"></div>
+                <div class="goalie-team logo-large {{helperLowerCase away.team}}"></div>
                 <img class="goalie" src="{{away.img}}" />
             </div>
       </div>
@@ -25,11 +25,11 @@
       <div class="panel panel-default text-center">
         <div class="panel-heading">
           <h3 class="goalie-name">{{home.title}}</h3>
-          <div class="{{helperLowerCase home.status}}" role="alert">{{home.status}}</div>
+          <div class="{{helperLowerCase home.status}} goalie-status" role="alert">{{home.status}}</div>
         </div>
         <div class="panel-body">
             <div class="goalies">
-                <div class="goalie-team {{helperLowerCase home.team}}"></div>
+                <div class="goalie-team logo-large {{helperLowerCase home.team}}"></div>
                 <img class="goalie" src="{{home.img}}" />
             </div>
         </div>

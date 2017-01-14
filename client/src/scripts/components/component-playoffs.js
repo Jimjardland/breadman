@@ -11,7 +11,7 @@ $(document).ready(function () {
 
 					teamNames.each(function (i) {
 						var playoffClass = i < length / 2 ? 'playoffs-left' : 'playoffs-right';
-						$(this).addClass($(this).text().toLowerCase() + ' playoffs-logo ' + playoffClass);
+						$(this).addClass($(this).text().toLowerCase() + ' playoffs-logo logo-large ' + playoffClass);
 						$(this).text('');
 					});
 				};

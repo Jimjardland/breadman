@@ -1,15 +1,12 @@
-Handlebars.registerPartial("date", Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
-    var helper;
+Handlebars.registerPartial("header", Handlebars.template({"1":function(depth0,helpers,partials,data) {
+    return "first-container";
+},"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
+    var stack1, helper, alias1=helpers.helperMissing;
 
-  return "<div class=\"container text-center date-container\">\n    <div class=\"row\">\n    	<div class=\"col-md-4 col-xs-12\">\n   			<button type=\"button\" class=\"btn btn-default show-all pull-left\">Show all results</button>\n   		</div> \n        <div class=\"col-md-4 col-xs-12 center-button text-center\">\n       		<h3 class=\"date\">"
-    + this.escapeExpression(((helper = (helper = helpers.date || (depth0 != null ? depth0.date : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0,{"name":"date","hash":{},"data":data}) : helper)))
-    + "</h3>\n        </div>\n    </div>\n</div>\n";
-},"useData":true}));
-Handlebars.registerPartial("header", Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
-    var helper;
-
-  return "<div class=\"container text-center date-container\">\n    <div class=\"row\">\n    	<div class=\"col-md-4 col-xs-12 col-centered\">\n   			<button type=\"button\" class=\"btn btn-default show-all\">Show results</button>\n   		</div> \n        <div class=\"col-md-4 col-xs-12 center-button text-center\">\n       		<h3 class=\"date\">"
-    + this.escapeExpression(((helper = (helper = helpers.date || (depth0 != null ? depth0.date : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0,{"name":"date","hash":{},"data":data}) : helper)))
+  return "\n<div class=\"container text-center date-container "
+    + ((stack1 = (helpers.ifCond || (depth0 && depth0.ifCond) || alias1).call(depth0,(data && data.index),0,{"name":"ifCond","hash":{},"fn":this.program(1, data, 0),"inverse":this.noop,"data":data})) != null ? stack1 : "")
+    + "\">\n    <div class=\"row\">\n    	<div class=\"col-md-4 col-xs-12 col-centered\">\n   			<button type=\"button\" class=\"btn btn-default show-all\">Show results</button>\n   		</div> \n        <div class=\"col-md-4 col-xs-12 center-button text-center\">\n       		<h3 class=\"date\">"
+    + this.escapeExpression(((helper = (helper = helpers.date || (depth0 != null ? depth0.date : depth0)) != null ? helper : alias1),(typeof helper === "function" ? helper.call(depth0,{"name":"date","hash":{},"data":data}) : helper)))
     + "</h3>\n        </div>\n    </div>\n</div>\n";
 },"useData":true}));
 Handlebars.registerPartial("select", Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {

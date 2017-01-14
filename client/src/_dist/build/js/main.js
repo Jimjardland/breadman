@@ -214,7 +214,7 @@ $(document).ready(function () {
 
 					teamNames.each(function (i) {
 						var playoffClass = i < length / 2 ? 'playoffs-left' : 'playoffs-right';
-						$(this).addClass($(this).text().toLowerCase() + ' playoffs-logo ' + playoffClass);
+						$(this).addClass($(this).text().toLowerCase() + ' playoffs-logo logo-large ' + playoffClass);
 						$(this).text('');
 					});
 				};
@@ -317,7 +317,6 @@ $(document).ready(function () {
 							});
 
 							selector.val(query.sortOrder).change();
-							$(component).find('#sortingtext').text($('#sortby option:selected').text())
 							selector.on('change', function () {
 								getDataAndRender({
 									startPage: 1,
