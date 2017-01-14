@@ -18,7 +18,6 @@ var handlebars = require('gulp-handlebars'),
     sprite = require('gulp-sprite-generator');
 
 
-
 gulp.task('default', function() {
     gulp.start('templates');
     gulp.start('scripts');
@@ -65,14 +64,14 @@ gulp.task('scripts', function() {
 gulp.task('sprites', function() {
     var spriteOutput;
 
-    spriteOutput = gulp.src("./_dist/build/scss/*.css")
+    spriteOutput = gulp.src("./gui/scss/*.scss")
         .pipe(sprite({
-            baseUrl:         "./img",
+            baseUrl:         "img",
             spriteSheetName: "sprite.png",
-            spriteSheetPath: "../../../_dist/build/image"
+            spriteSheetPath: "../image"
         }));
 
-    spriteOutput.css.pipe(gulp.dest("./_dist/build/scss"));
+    spriteOutput.css.pipe(gulp.dest("./gui/scss/"));
     spriteOutput.img.pipe(gulp.dest("./_dist/build/image"));
 });
 
@@ -97,8 +96,11 @@ gulp.task('partials', function() {
 
 gulp.task('watch', function() {
   
-  // Watch .scss files
-  gulp.watch('./gui/**/*.scss', ['sass']);
+  // Watch .scss files after sprites
+ // gulp.watch('./gui/**/*.scss', ['sass']);
+
+  //watch .scss
+  gulp.watch('./gui/scss/*.scss', ['sprites', 'sass']);
 
   // Watch .js files
   gulp.watch('./scripts/**/*.js', ['scripts']);

@@ -1,90 +1,301 @@
-.blackhawks, .chi{
-    background-image: url("../../../gui/img/blackhawks.png");
+.blackhawks.logo-large, .chi.logo-large{
+    background-image: url("../image/sprite.png");
+    background-position: -0px -3870px;
+    background-size: 100px 3970px!important;
 }
-.bruins, .bos{
-    background-image: url("../../../gui/img/bruins.png");
+.bruins.logo-large, .bos.logo-large{
+    background-image: url("../image/sprite.png");
+    background-position: -0px -2370px;
+    background-size: 100px 3970px!important;
 }
-.flames, .cgy{
-    background-image: url("../../../gui/img/flames.png");
+.flames.logo-large, .cgy.logo-large{
+    background-image: url("../image/sprite.png");
+    background-position: -0px -3770px;
+    background-size: 100px 3970px!important;
 }
-.canadiens, .mtl{
-    background-image: url("../../../gui/img/canadiens.png");
+.canadiens.logo-large, .mtl.logo-large{
+    background-image: url("../image/sprite.png");
+    background-position: -0px -3670px;
+    background-size: 100px 3970px!important;
 }
-.capitals, .wsh{
-    background-image: url("../../../gui/img/capitals.png");
+.capitals.logo-large, .wsh.logo-large{
+    background-image: url("../image/sprite.png");
+    background-position: -0px -3570px;
+    background-size: 100px 3970px!important;
 }
-.avalanche, .col{
-    background-image: url("../../../gui/img/avalanche.png");
+.avalanche.logo-large, .col.logo-large{
+    background-image: url("../image/sprite.png");
+    background-position: -0px -3470px;
+    background-size: 100px 3970px!important;
 }
-.columbus, .cbj{
-    background-image: url("../../../gui/img/columbus.png");
+.columbus.logo-large, .cbj.logo-large{
+    background-image: url("../image/sprite.png");
+    background-position: -0px -3370px;
+    background-size: 100px 3970px!important;
 }
-.coyotes, .ari{
-    background-image: url("../../../gui/img/coyotes.png");
+.coyotes.logo-large, .ari.logo-large{
+    background-image: url("../image/sprite.png");
+    background-position: -0px -3270px;
+    background-size: 100px 3970px!important;
 }
-.stars, .dal{
-    background-image: url("../../../gui/img/stars.png");
+.stars.logo-large, .dal.logo-large{
+    background-image: url("../image/sprite.png");
+    background-position: -0px -3170px;
+    background-size: 100px 3970px!important;
 }
-.wings, .det{
-    background-image: url("../../../gui/img/redwings.png");
+.wings.logo-large, .det.logo-large{
+    background-image: url("../image/sprite.png");
+    background-position: -0px -3070px;
+    background-size: 100px 3970px!important;
 }
-.devils, .njd{
-    background-image: url("../../../gui/img/devils.png");
+.devils.logo-large, .njd.logo-large{
+    background-image: url("../image/sprite.png");
+    background-position: -0px -2970px;
+    background-size: 100px 3970px!important;
 }
-.ducks, .ana{
-    background-image: url("../../../gui/img/ducks.png");
+.ducks.logo-large, .ana.logo-large{
+    background-image: url("../image/sprite.png");
+    background-position: -0px -2870px;
+    background-size: 100px 3970px!important;
 }
-.panthers, .fla{
-    background-image: url("../../../gui/img/panthers.png");
+.panthers.logo-large, .fla.logo-large{
+    background-image: url("../image/sprite.png");
+    background-position: -0px -2770px;
+    background-size: 100px 3970px!important;
 }
-.hurricanes, .car{
-    background-image: url("../../../gui/img/hurricanes.png");
+.hurricanes.logo-large, .car.logo-large{
+    background-image: url("../image/sprite.png");
+    background-position: -0px -2670px;
+    background-size: 100px 3970px!important;
 }
-.islanders, .nyi{
-    background-image: url("../../../gui/img/islanders.png");
+.islanders.logo-large, .nyi.logo-large{
+    background-image: url("../image/sprite.png");
+    background-position: -0px -2570px;
+    background-size: 100px 3970px!important;
 }
-.kings, .lak{
-    background-image: url("../../../gui/img/kings.png");
+.kings.logo-large, .lak.logo-large{
+    background-image: url("../image/sprite.png");
+    background-position: -0px -2470px;
+    background-size: 100px 3970px!important;
 }
-.blues, .stl{
-    background-image: url("../../../gui/img/blues.png");
+.blues.logo-large, .stl.logo-large{
+    background-image: url("../image/sprite.png");
+    background-position: -0px -870px;
+    background-size: 100px 3970px!important;
 }
-.predators, .nsh{
-    background-image: url("../../../gui/img/predators.png");
+.predators.logo-large, .nsh.logo-large{
+    background-image: url("../image/sprite.png");
+    background-position: -0px -2270px;
+    background-size: 100px 3970px!important;
 }
-.oilers, .edm{
-    background-image: url("../../../gui/img/oilers.png");
+.oilers.logo-large, .edm.logo-large{
+    background-image: url("../image/sprite.png");
+    background-position: -0px -2170px;
+    background-size: 100px 3970px!important;
 }
-.senators, .ott{
-    background-image: url("../../../gui/img/senators.png");
+.senators.logo-large, .ott.logo-large{
+    background-image: url("../image/sprite.png");
+    background-position: -0px -2070px;
+    background-size: 100px 3970px!important;
 }
-.penguins, .pit{
-    background-image: url("../../../gui/img/penguins.png");
+.penguins.logo-large, .pit.logo-large{
+    background-image: url("../image/sprite.png");
+    background-position: -0px -1870px;
+    background-size: 100px 3970px!important;
 }
-.flyers, .phi{
-    background-image: url("../../../gui/img/flyers.png");
+.flyers.logo-large, .phi.logo-large{
+    background-image: url("../image/sprite.png");
+    background-position: -0px -1770px;
+    background-size: 100px 3970px!important;
 }
-.rangers, .nyr{
-    background-image: url("../../../gui/img/rangers.png");
+.rangers.logo-large, .nyr.logo-large{
+    background-image: url("../image/sprite.png");
+    background-position: -0px -1670px;
+    background-size: 100px 3970px!important;
 }
-.sabres, .buf{
-    background-image: url("../../../gui/img/sabres.png");
+.sabres.logo-large, .buf.logo-large{
+    background-image: url("../image/sprite.png");
+    background-position: -0px -1570px;
+    background-size: 100px 3970px!important;
 }
-.sharks, .sjs{
-    background-image: url("../../../gui/img/sharks.png");
+.sharks.logo-large, .sjs.logo-large{
+    background-image: url("../image/sprite.png");
+    background-position: -0px -1470px;
+    background-size: 100px 3970px!important;
 }
-.lightning, .tbl{
-    background-image: url("../../../gui/img/lightning.png");
+.lightning.logo-large, .tbl.logo-large{
+    background-image: url("../image/sprite.png");
+    background-position: -0px -1370px;
+    background-size: 100px 3970px!important;
 }
-.toronto, .tor{
-    background-image: url("../../../gui/img/toronto.png");
+.toronto.logo-large, .tor.logo-large{
+    background-image: url("../image/sprite.png");
+    background-position: -0px -1270px;
+    background-size: 100px 3970px!important;
 }
-.vancouver, .van{
-    background-image: url("../../../gui/img/canucks.png");
+.vancouver.logo-large, .van.logo-large{
+    background-image: url("../image/sprite.png");
+    background-position: -0px -1170px;
+    background-size: 100px 3970px!important;
 }
-.wild, .min{
-    background-image: url("../../../gui/img/wilds.png");
+.wild.logo-large, .min.logo-large{
+    background-image: url("../image/sprite.png");
+    background-position: -0px -1070px;
+    background-size: 100px 3970px!important;
 }
-.jets, .wpg{
-    background-image: url("../../../gui/img/jets.png");
+.jets.logo-large, .wpg.logo-large{
+    background-image: url("../image/sprite.png");
+    background-position: -0px -970px;
+    background-size: 100px 3970px!important;
+}
+
+.blackhawks.logo-small, .chi.logo-small{
+    background-image: url("../image/sprite.png");
+    background-position: -0px -0px;
+    background-size: 100px 3970px!important;
+}
+.bruins.logo-small, .bos.logo-small{
+    background-image: url("../image/sprite.png");
+    background-position: -0px -840px;
+    background-size: 100px 3970px!important;
+}
+.flames.logo-small, .cgy.logo-small{
+    background-image: url("../image/sprite.png");
+    background-position: -0px -810px;
+    background-size: 100px 3970px!important;
+}
+.canadiens.logo-small, .mtl.logo-small{
+    background-image: url("../image/sprite.png");
+    background-position: -0px -780px;
+    background-size: 100px 3970px!important;
+}
+.capitals.logo-small, .wsh.logo-small{
+    background-image: url("../image/sprite.png");
+    background-position: -0px -750px;
+    background-size: 100px 3970px!important;
+}
+.avalanche.logo-small, .col.logo-small{
+    background-image: url("../image/sprite.png");
+    background-position: -0px -720px;
+    background-size: 100px 3970px!important;
+}
+.columbus.logo-small, .cbj.logo-small{
+    background-image: url("../image/sprite.png");
+    background-position: -0px -690px;
+    background-size: 100px 3970px!important;
+}
+.coyotes.logo-small, .ari.logo-small{
+    background-image: url("../image/sprite.png");
+    background-position: -0px -660px;
+    background-size: 100px 3970px!important;
+}
+.stars.logo-small, .dal.logo-small{
+    background-image: url("../image/sprite.png");
+    background-position: -0px -630px;
+    background-size: 100px 3970px!important;
+}
+.wings.logo-small, .det.logo-small{
+    background-image: url("../image/sprite.png");
+    background-position: -0px -600px;
+    background-size: 100px 3970px!important;
+}
+.devils.logo-small, .njd.logo-small{
+    background-image: url("../image/sprite.png");
+    background-position: -0px -1970px;
+    background-size: 100px 3970px!important;
+}
+.ducks.logo-small, .ana.logo-small{
+    background-image: url("../image/sprite.png");
+    background-position: -0px -570px;
+    background-size: 100px 3970px!important;
+}
+.panthers.logo-small, .fla.logo-small{
+    background-image: url("../image/sprite.png");
+    background-position: -0px -540px;
+    background-size: 100px 3970px!important;
+}
+.hurricanes.logo-small, .car.logo-small{
+    background-image: url("../image/sprite.png");
+    background-position: -0px -510px;
+    background-size: 100px 3970px!important;
+}
+.islanders.logo-small, .nyi.logo-small{
+    background-image: url("../image/sprite.png");
+    background-position: -0px -480px;
+    background-size: 100px 3970px!important;
+}
+.kings.logo-small, .lak.logo-small{
+    background-image: url("../image/sprite.png");
+    background-position: -0px -450px;
+    background-size: 100px 3970px!important;
+}
+.blues.logo-small, .stl.logo-small{
+    background-image: url("../image/sprite.png");
+    background-position: -0px -420px;
+    background-size: 100px 3970px!important;
+}
+.predators.logo-small, .nsh.logo-small{
+    background-image: url("../image/sprite.png");
+    background-position: -0px -390px;
+    background-size: 100px 3970px!important;
+}
+.oilers.logo-small, .edm.logo-small{
+    background-image: url("../image/sprite.png");
+    background-position: -0px -360px;
+    background-size: 100px 3970px!important;
+}
+.senators.logo-small, .ott.logo-small{
+    background-image: url("../image/sprite.png");
+    background-position: -0px -330px;
+    background-size: 100px 3970px!important;
+}
+.penguins.logo-small, .pit.logo-small{
+    background-image: url("../image/sprite.png");
+    background-position: -0px -300px;
+    background-size: 100px 3970px!important;
+}
+.flyers.logo-small, .phi.logo-small{
+    background-image: url("../image/sprite.png");
+    background-position: -0px -270px;
+    background-size: 100px 3970px!important;
+}
+.rangers.logo-small, .nyr.logo-small{
+    background-image: url("../image/sprite.png");
+    background-position: -0px -240px;
+    background-size: 100px 3970px!important;
+}
+.sabres.logo-small, .buf.logo-small{
+    background-image: url("../image/sprite.png");
+    background-position: -0px -210px;
+    background-size: 100px 3970px!important;
+}
+.sharks.logo-small, .sjs.logo-small{
+    background-image: url("../image/sprite.png");
+    background-position: -0px -180px;
+    background-size: 100px 3970px!important;
+}
+.lightning.logo-small, .tbl.logo-small{
+    background-image: url("../image/sprite.png");
+    background-position: -0px -150px;
+    background-size: 100px 3970px!important;
+}
+.toronto.logo-small, .tor.logo-small{
+    background-image: url("../image/sprite.png");
+    background-position: -0px -120px;
+    background-size: 100px 3970px!important;
+}
+.vancouver.logo-small, .van.logo-small{
+    background-image: url("../image/sprite.png");
+    background-position: -0px -90px;
+    background-size: 100px 3970px!important;
+}
+.wild.logo-small, .min.logo-small{
+    background-image: url("../image/sprite.png");
+    background-position: -0px -60px;
+    background-size: 100px 3970px!important;
+}
+.jets.logo-small, .wpg.logo-small{
+    background-image: url("../image/sprite.png");
+    background-position: -0px -30px;
+    background-size: 100px 3970px!important;
 }
