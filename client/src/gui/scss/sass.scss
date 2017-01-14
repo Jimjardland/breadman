@@ -1,4 +1,5 @@
-@import "teams";
+@import "teams-large";
+@import "teams-small";
 
 body{
 padding-top: 70px !important;
@@ -61,6 +62,7 @@ padding-top: 70px !important;
 .small-logo{
     background-repeat: no-repeat;
     background-size: contain;
+    height: 30px !important;
 }
 .mail-me{
   margin: 10px 0 0 0;
@@ -97,8 +99,8 @@ padding-top: 70px !important;
 .table>caption+thead>tr:first-child>td, .table>caption+thead>tr:first-child>th, .table>colgroup+thead>tr:first-child>td, .table>colgroup+thead>tr:first-child>th, .table>thead:first-child>tr:first-child>td, .table>thead:first-child>tr:first-child>.th-placeholder {
   padding-left: 30px !important;
 }
-.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
-  padding: 8px 8px 8px 1px !important;
+body .table>tbody>tr>td, .table>tbody>tr>th, body .table>tfoot>tr>td, body .table>tfoot>tr>th, body .table>thead>tr>td, body .table>thead>tr>th{
+  padding: 8px 8px 8px 1px;
 }
 .table.wildcard-delimeter>tbody>tr:nth-child(2)>td{
   border-bottom: 3px solid black;
@@ -180,6 +182,10 @@ padding-top: 70px !important;
       border: none;
       padding: 1em 0 0 0;
       margin: 0 0 3em 0;
+}
+
+.logo-padding{
+  padding: 4px 0px 0px 0px !important;
 }
 
 @media (max-width: 480px) {
