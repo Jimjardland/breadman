@@ -33,6 +33,9 @@ export default () => {
 				if(game.linescore.currentPeriodTimeRemaining === 'Final') {
 					obj.gameFinished = true;
 					gameInfo.gameFinished = true;
+
+					if(game.linescore.currentPeriodOrdinal !== '3rd') gameInfo.endedWith = game.linescore.currentPeriodOrdinal;
+
 					try {
 						gameInfo.url = getUrl(game.content.media.epg[3].items[0].mediaPlaybackId);
 
