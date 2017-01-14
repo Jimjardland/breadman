@@ -1,11 +1,11 @@
-# nhl
+# Breadman
 
-npm install in root && client/src
+npm install in root
 
-Root
-npm run build
-node _dist/server.js
+npm run startDev
 
-client/src
+npm install in client/src
+
+npm install gulp -g
+
 gulp
-
