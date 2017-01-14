@@ -19,6 +19,7 @@ var handlebars = require('gulp-handlebars'),
 
 
 gulp.task('default', function() {
+    gulp.start('sprites')
     gulp.start('templates');
     gulp.start('scripts');
     gulp.start('partials');
@@ -61,20 +62,25 @@ gulp.task('scripts', function() {
     .pipe(livereload());
 });
 
-gulp.task('sprites', function() {
+var buildSprite = function (size) {
     var spriteOutput;
 
-    spriteOutput = gulp.src("./gui/scss/*.scss")
+    spriteOutput = gulp.src("./gui/scss/teams/_teams-" + size + ".scss")
         .pipe(sprite({
             baseUrl:         "img",
-            spriteSheetName: "sprite.png",
+            spriteSheetName: "sprite-" + size + ".png",
             spriteSheetPath: "../image"
         }));
 
-    spriteOutput.css.pipe(gulp.dest("./gui/scss/"));
+    spriteOutput.css.pipe(gulp.dest("./gui/scss"));
     spriteOutput.img.pipe(gulp.dest("./_dist/build/image"));
-});
+};
 
+gulp.task('sprites', function() {
+  buildSprite('small');
+  buildSprite('medium');
+  buildSprite('large');
+});
 
 gulp.task('partials', function() {
   // Assume all partials start with an underscore 
@@ -95,12 +101,12 @@ gulp.task('partials', function() {
 });
 
 gulp.task('watch', function() {
-  
-  // Watch .scss files after sprites
- // gulp.watch('./gui/**/*.scss', ['sass']);
+
+  //watch sprites
+  gulp.watch('./gui/scss/teams/*.scss', ['sprites']);
 
   //watch .scss
-  gulp.watch('./gui/scss/*.scss', ['sprites', 'sass']);
+  gulp.watch('./gui/scss/*.scss', ['sass']);
 
   // Watch .js files
   gulp.watch('./scripts/**/*.js', ['scripts']);
