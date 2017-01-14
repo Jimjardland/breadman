@@ -1,6 +1,7 @@
     {{#each .}}
       <tr>
-        <td data-toggle="tooltip" data-placement="top" title="{{team.name}}" class="small-logo {{helperLowerCase team.name}}"></td>
+       <td><strong>{{add @index 1 0}}</strong></td>
+       <td class="logo-padding" data-toggle="tooltip" data-placement="top" title="Team"><div class="small-logo logo-small {{helperLowerCase team.name}}"></div></td>
         <td class="col-md-3" data-toggle="tooltip" data-placement="top" title="Team">{{team.name}}</td>
         <td data-toggle="tooltip" data-placement="top" title="Games played">{{gamesPlayed}}</td>
         <td data-toggle="tooltip" data-placement="top" title="Wins - Losses - OT Losses">{{leagueRecord.wins}}-{{leagueRecord.losses}}-{{leagueRecord.ot}}</td>
