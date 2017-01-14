@@ -23,6 +23,10 @@
 			if(moment) return moment(dateString).format('HH:mm') 
 		});
 
+		Handlebars.registerHelper('add', function (a, b, c) {
+			return a + b + c;
+		});
+
 		Handlebars.registerHelper('ifCond', function(v1, v2, options) {
 		  if(v1 === v2) {
 		    return options.fn(this);

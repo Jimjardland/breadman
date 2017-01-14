@@ -1,18 +1,3 @@
-Handlebars.registerPartial("goalie", Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
-    var helper, alias1=helpers.helperMissing, alias2="function", alias3=this.escapeExpression;
-
-  return "<div class=\"col-md-6 col-xs-6\">\n  <div class=\"panel panel-default text-center\">\n    <div class=\"panel-heading\">      \n      <h3 class=\"goalie-name\">"
-    + alias3(((helper = (helper = helpers.title || (depth0 != null ? depth0.title : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"title","hash":{},"data":data}) : helper)))
-    + "</h3>\n      <div class=\""
-    + alias3((helpers.helperLowerCase || (depth0 && depth0.helperLowerCase) || alias1).call(depth0,(depth0 != null ? depth0.status : depth0),{"name":"helperLowerCase","hash":{},"data":data}))
-    + " goalie-status\" role=\"alert\">"
-    + alias3(((helper = (helper = helpers.status || (depth0 != null ? depth0.status : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"status","hash":{},"data":data}) : helper)))
-    + "</div>\n    </div>\n    <div class=\"panel-body\">\n        <div class=\"goalies\">\n            <div class=\"goalie-team logo-large "
-    + alias3((helpers.helperLowerCase || (depth0 && depth0.helperLowerCase) || alias1).call(depth0,(depth0 != null ? depth0.team : depth0),{"name":"helperLowerCase","hash":{},"data":data}))
-    + "\"></div>\n            <img class=\"goalie\" src=\""
-    + alias3(((helper = (helper = helpers.img || (depth0 != null ? depth0.img : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"img","hash":{},"data":data}) : helper)))
-    + "\" />\n        </div>\n  </div>\n  </div>      \n</div> ";
-},"useData":true}));
 Handlebars.registerPartial("header", Handlebars.template({"1":function(depth0,helpers,partials,data) {
     return "first-container";
 },"3":function(depth0,helpers,partials,data) {
@@ -27,6 +12,21 @@ Handlebars.registerPartial("header", Handlebars.template({"1":function(depth0,he
     + "   		</div> 	\n        <div class=\"col-md-4 col-xs-12 center-button text-center\">\n       		<h3 class=\"date\">"
     + this.escapeExpression(((helper = (helper = helpers.date || (depth0 != null ? depth0.date : depth0)) != null ? helper : alias1),(typeof helper === "function" ? helper.call(depth0,{"name":"date","hash":{},"data":data}) : helper)))
     + "</h3>\n        </div>\n    </div>\n</div>\n";
+},"useData":true}));
+Handlebars.registerPartial("goalie", Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
+    var helper, alias1=helpers.helperMissing, alias2="function", alias3=this.escapeExpression;
+
+  return "<div class=\"col-md-6 col-xs-6\">\n  <div class=\"panel panel-default text-center\">\n    <div class=\"panel-heading\">      \n      <h3 class=\"goalie-name\">"
+    + alias3(((helper = (helper = helpers.title || (depth0 != null ? depth0.title : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"title","hash":{},"data":data}) : helper)))
+    + "</h3>\n      <div class=\""
+    + alias3((helpers.helperLowerCase || (depth0 && depth0.helperLowerCase) || alias1).call(depth0,(depth0 != null ? depth0.status : depth0),{"name":"helperLowerCase","hash":{},"data":data}))
+    + " goalie-status\" role=\"alert\">"
+    + alias3(((helper = (helper = helpers.status || (depth0 != null ? depth0.status : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"status","hash":{},"data":data}) : helper)))
+    + "</div>\n    </div>\n    <div class=\"panel-body\">\n        <div class=\"goalies\">\n            <div class=\"goalie-team logo-large "
+    + alias3((helpers.helperLowerCase || (depth0 && depth0.helperLowerCase) || alias1).call(depth0,(depth0 != null ? depth0.team : depth0),{"name":"helperLowerCase","hash":{},"data":data}))
+    + "\"></div>\n            <img class=\"goalie\" src=\""
+    + alias3(((helper = (helper = helpers.img || (depth0 != null ? depth0.img : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"img","hash":{},"data":data}) : helper)))
+    + "\" />\n        </div>\n  </div>\n  </div>      \n</div> ";
 },"useData":true}));
 Handlebars.registerPartial("select", Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
     return "<select class=\"selectpicker drop\" id=\"type\" data-width=\"100px\">\n  <option value=\"wildcardstandings\">Wildcard</option>\n  <option value=\"divisionstandings\">League</option>\n</select>";

@@ -21,6 +21,7 @@
     <table class="table table-striped">
     <thead>
       <tr>
+        <th></th>
         <th data-toggle="tooltip" data-placement="top" title="Player">Player</th>
         <th data-toggle="tooltip" data-placement="top" title="Team">Team</th>
         <th data-toggle="tooltip" data-placement="top" title="Position">Pos</th>
@@ -37,8 +38,9 @@
     <tbody>
      {{#each data}}
       <tr>
+        <td><strong>{{add @index ../start 1}}</strong></td>
        <td class="col-md-2" data-toggle="tooltip" data-placement="top" title="Player">{{playerName}}</td>
-        <td class="col-md-1 small-logo logo-small {{fixTeam playerTeamsPlayedFor}}" data-toggle="tooltip" data-placement="top" title="Team"></td>
+        <td class="col-md-1 logo-padding" data-toggle="tooltip" data-placement="top" title="Team"><div class="small-logo logo-small {{fixTeam playerTeamsPlayedFor}}"></div></td>
         <td class="col-md-1" data-toggle="tooltip" data-placement="top" title="Position">{{playerPositionCode}}</td>
         <td class="col-md-1" data-toggle="tooltip" data-placement="top" title="Games played">{{gamesPlayed}}</td>
         <td class="col-md-1" data-toggle="tooltip" data-placement="top" title="Goals">{{goals}}</td>
