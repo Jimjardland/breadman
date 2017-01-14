@@ -7,7 +7,7 @@ export default () => {
 
 	const getHighlightsUrls = (json) => {
 		const retVal = [];
-		const gameDay = (date) => ({ date, games: [] });
+		const gameDay = (date) => ({ date, games: [], gameFinished: false });
 		const getUrl = (id) => `https://www.nhl.com/video/embed/c-${id}&autoplay=true`;
 
 		const formatDay = (obj, games) => {
@@ -31,6 +31,7 @@ export default () => {
 				}
 
 				if(game.linescore.currentPeriodTimeRemaining === 'Final') {
+					obj.gameFinished = true;
 					gameInfo.gameFinished = true;
 					try {
 						gameInfo.url = getUrl(game.content.media.epg[3].items[0].mediaPlaybackId);

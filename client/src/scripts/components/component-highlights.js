@@ -12,6 +12,7 @@ $(document).ready(function () {
 						var spoilBtn = $(component).find('[data-spoil]');
 						$(component).find('.show-all').on('click', function () { 
 							$(this).parents('[data-container]').find('[data-spoil]').click();
+							$(this).fadeOut('slow');
 						});
 
 					    spoilBtn.on('click', function(e){ 
