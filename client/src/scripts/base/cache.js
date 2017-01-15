@@ -6,13 +6,15 @@
 			if(this.getStorage) this.getStorage().setItem(this.prefix + key, JSON.stringify(value));
 		},
 		get: function (key) {
-			var item = JSON.parse(this.getStorage().getItem(this.prefix + key));
-			var dateKey = 'localStorageKeyExpires';
+			if(this.getStorage) {
+				var item = JSON.parse(this.getStorage().getItem(this.prefix + key));
+				var dateKey = 'localStorageKeyExpires';
 
-			if(item && item.hasOwnProperty(dateKey) && new Date(item[dateKey]).getTime() < new Date().getTime()) {
-				this.remove(key);
-			} else {
-				return item;
+				if(item && item.hasOwnProperty(dateKey) && new Date(item[dateKey]).getTime() < new Date().getTime()) {
+					this.remove(key);
+				} else {
+					return item;
+				}
 			}
 
 			return null;

@@ -36,13 +36,15 @@
 			if(this.getStorage) this.getStorage().setItem(this.prefix + key, JSON.stringify(value));
 		},
 		get: function (key) {
-			var item = JSON.parse(this.getStorage().getItem(this.prefix + key));
-			var dateKey = 'localStorageKeyExpires';
+			if(this.getStorage) {
+				var item = JSON.parse(this.getStorage().getItem(this.prefix + key));
+				var dateKey = 'localStorageKeyExpires';
 
-			if(item && item.hasOwnProperty(dateKey) && new Date(item[dateKey]).getTime() < new Date().getTime()) {
-				this.remove(key);
-			} else {
-				return item;
+				if(item && item.hasOwnProperty(dateKey) && new Date(item[dateKey]).getTime() < new Date().getTime()) {
+					this.remove(key);
+				} else {
+					return item;
+				}
 			}
 
 			return null;
@@ -126,46 +128,6 @@
 })(jQuery);
 
 
-
-(function () {
-	'use strict';
-
-	var init = function () {
-		Handlebars.registerHelper('helperLowerCase', function (string) {
-		    if(string) return string.toLowerCase();
-		});
-
-		Handlebars.registerHelper('toFixed', function (numb, fix) {
-		    if(numb) return numb.toFixed(fix);
-		});
-
-		Handlebars.registerHelper('fixTeam', function (team) {
-			var retVal = team.toLowerCase()
-		    if(retVal && retVal.indexOf(',')) {
-		     	var arr = retVal.split(',');
-		     	return arr[arr.length - 1];
-		    }
-		    return retVal;
-		});
-
-		Handlebars.registerHelper('hourMinute', function (dateString) {
-			if(moment) return moment(dateString).format('HH:mm') 
-		});
-
-		Handlebars.registerHelper('add', function (a, b, c) {
-			return a + b + c;
-		});
-
-		Handlebars.registerHelper('ifCond', function(v1, v2, options) {
-		  if(v1 === v2) {
-		    return options.fn(this);
-		  }
-		  return options.inverse(this);
-		});
-	}
-	init();
-
-}());
 
 $(document).ready(function () {
 	'use strict';
@@ -385,3 +347,42 @@ $(document).ready(function () {
 		});
 	}
 });
+(function () {
+	'use strict';
+
+	var init = function () {
+		Handlebars.registerHelper('helperLowerCase', function (string) {
+		    if(string) return string.toLowerCase();
+		});
+
+		Handlebars.registerHelper('toFixed', function (numb, fix) {
+		    if(numb) return numb.toFixed(fix);
+		});
+
+		Handlebars.registerHelper('fixTeam', function (team) {
+			var retVal = team.toLowerCase()
+		    if(retVal && retVal.indexOf(',')) {
+		     	var arr = retVal.split(',');
+		     	return arr[arr.length - 1];
+		    }
+		    return retVal;
+		});
+
+		Handlebars.registerHelper('hourMinute', function (dateString) {
+			if(moment) return moment(dateString).format('HH:mm') 
+		});
+
+		Handlebars.registerHelper('add', function (a, b, c) {
+			return a + b + c;
+		});
+
+		Handlebars.registerHelper('ifCond', function(v1, v2, options) {
+		  if(v1 === v2) {
+		    return options.fn(this);
+		  }
+		  return options.inverse(this);
+		});
+	}
+	init();
+
+}());
