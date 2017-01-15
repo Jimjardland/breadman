@@ -3,7 +3,7 @@
 	nhl.cache = {
 		prefix: 'breadman_',
 		set: function (key, value) {
-			this.getStorage().setItem(this.prefix + key, JSON.stringify(value));
+			if(this.getStorage) this.getStorage().setItem(this.prefix + key, JSON.stringify(value));
 		},
 		get: function (key) {
 			var item = JSON.parse(this.getStorage().getItem(this.prefix + key));
