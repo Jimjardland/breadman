@@ -8,7 +8,26 @@ export default () => {
 	const getHighlightsUrls = (json) => {
 		const retVal = [];
 		const gameDay = (date) => ({ date, games: [], gameFinished: false });
-		const getUrl = (id) => `https://www.nhl.com/video/embed/c-${id}&autoplay=true`;
+		const formatUrl = (id) => `https://www.nhl.com/video/embed/c-${id}&autoplay=true`;
+
+		const getUrl = (arr) => {
+   			for(var i=0; i < arr.length; i++) {
+   				const video = arr[i];
+   				var vid;
+
+				switch (video.title) {
+					case 'Recap':
+						vid = video.items[0].mediaPlaybackId || false;
+						break;
+					case 'Extended Highlights':
+						vid = video.items[0].mediaPlaybackId || false;
+						break;
+				}
+
+				if(vid) return formatUrl(vid)
+   			}
+   				return null;
+		}
 
 		const formatDay = (obj, games) => {
 			for (var i = 0; i < games.length; i++) {
@@ -33,16 +52,10 @@ export default () => {
 				if(game.linescore.currentPeriodTimeRemaining === 'Final') {
 					obj.gameFinished = true;
 					gameInfo.gameFinished = true;
+					gameInfo.url = getUrl(game.content.media.epg);
 
 					if(game.linescore.currentPeriodOrdinal !== '3rd') gameInfo.endedWith = game.linescore.currentPeriodOrdinal;
-
-					try {
-						gameInfo.url = getUrl(game.content.media.epg[3].items[0].mediaPlaybackId);
-
-					}
-					catch (err) {
-						console.log(err);
-					}
+					
 				} else {
 					gameInfo.gameFinished = false;
 				}
