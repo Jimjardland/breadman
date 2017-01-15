@@ -69,6 +69,8 @@ this["nhl"]["templates"]["highlights"] = Handlebars.template({"1":function(depth
     + alias3(((helper = (helper = helpers.awayGoals || (depth0 != null ? depth0.awayGoals : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"awayGoals","hash":{},"data":data}) : helper)))
     + " - "
     + alias3(((helper = (helper = helpers.homeGoals || (depth0 != null ? depth0.homeGoals : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"homeGoals","hash":{},"data":data}) : helper)))
+    + " "
+    + alias3(((helper = (helper = helpers.endedWith || (depth0 != null ? depth0.endedWith : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"endedWith","hash":{},"data":data}) : helper)))
     + "</strong></h4>\n          </div>\n        </div>\n        <div class=\"panel-body\">\n            <div class=\"highlight logo-large "
     + alias3((helpers.helperLowerCase || (depth0 && depth0.helperLowerCase) || alias1).call(depth0,(depth0 != null ? depth0.awayTeam : depth0),{"name":"helperLowerCase","hash":{},"data":data}))
     + " "
@@ -114,9 +116,9 @@ this["nhl"]["templates"]["highlights"] = Handlebars.template({"1":function(depth
 this["nhl"]["templates"]["injuries"] = Handlebars.template({"1":function(depth0,helpers,partials,data) {
     var stack1, alias1=this.escapeExpression;
 
-  return "<div class=\"table-responsive\">\n  <div class=\"injury logo-large "
+  return "<div class=\"table-responsive\">\n  <div class=\"injury "
     + alias1((helpers.helperLowerCase || (depth0 && depth0.helperLowerCase) || helpers.helperMissing).call(depth0,((stack1 = (depth0 != null ? depth0.Team : depth0)) != null ? stack1.Name : stack1),{"name":"helperLowerCase","hash":{},"data":data}))
-    + "\"></div>\n  <h2 class=\"injuries-team\">"
+    + " logo-medium\"></div>\n  <h2 class=\"injuries-team\">"
     + alias1(this.lambda(((stack1 = (depth0 != null ? depth0.Team : depth0)) != null ? stack1.Name : stack1), depth0))
     + "</h2>\n    <table class=\"table table-striped\">\n    <thead>\n        <tr>\n            <th>Player</th>\n            <th>Date</th>\n            <th>Status</th>\n            <th>Description</th>\n        </tr>\n    </thead>\n    <tbody>\n"
     + ((stack1 = helpers.each.call(depth0,(depth0 != null ? depth0.Injuries : depth0),{"name":"each","hash":{},"fn":this.program(2, data, 0),"inverse":this.noop,"data":data})) != null ? stack1 : "")
@@ -174,23 +176,23 @@ this["nhl"]["templates"]["_tr"] = Handlebars.template({"1":function(depth0,helpe
     + alias2((helpers.helperLowerCase || (depth0 && depth0.helperLowerCase) || alias1).call(depth0,((stack1 = (depth0 != null ? depth0.team : depth0)) != null ? stack1.name : stack1),{"name":"helperLowerCase","hash":{},"data":data}))
     + "\"></div></td>\n        <td class=\"col-md-3\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Team\">"
     + alias2(alias3(((stack1 = (depth0 != null ? depth0.team : depth0)) != null ? stack1.name : stack1), depth0))
-    + "</td>\n        <td data-toggle=\"tooltip\" data-placement=\"top\" title=\"Games played\">"
+    + "</td>\n        <td class=\"col-md-1\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Games played\">"
     + alias2(((helper = (helper = helpers.gamesPlayed || (depth0 != null ? depth0.gamesPlayed : depth0)) != null ? helper : alias1),(typeof helper === alias4 ? helper.call(depth0,{"name":"gamesPlayed","hash":{},"data":data}) : helper)))
-    + "</td>\n        <td data-toggle=\"tooltip\" data-placement=\"top\" title=\"Wins - Losses - OT Losses\">"
+    + "</td>\n        <td class=\"col-md-2\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Wins - Losses - OT Losses\">"
     + alias2(alias3(((stack1 = (depth0 != null ? depth0.leagueRecord : depth0)) != null ? stack1.wins : stack1), depth0))
     + "-"
     + alias2(alias3(((stack1 = (depth0 != null ? depth0.leagueRecord : depth0)) != null ? stack1.losses : stack1), depth0))
     + "-"
     + alias2(alias3(((stack1 = (depth0 != null ? depth0.leagueRecord : depth0)) != null ? stack1.ot : stack1), depth0))
-    + "</td>\n        <td data-toggle=\"tooltip\" data-placement=\"top\" title=\"Points\">"
+    + "</td>\n        <td class=\"col-md-1\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Points\">"
     + alias2(((helper = (helper = helpers.points || (depth0 != null ? depth0.points : depth0)) != null ? helper : alias1),(typeof helper === alias4 ? helper.call(depth0,{"name":"points","hash":{},"data":data}) : helper)))
-    + "</td>\n        <td data-toggle=\"tooltip\" data-placement=\"top\" title=\"Point percentage\">"
+    + "</td>\n        <td class=\"col-md-1\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Point percentage\">"
     + alias2(((helper = (helper = helpers.pointPercentage || (depth0 != null ? depth0.pointPercentage : depth0)) != null ? helper : alias1),(typeof helper === alias4 ? helper.call(depth0,{"name":"pointPercentage","hash":{},"data":data}) : helper)))
-    + "</td>\n        <td data-toggle=\"tooltip\" data-placement=\"top\" title=\"Goals for - Goals against\">"
+    + "</td>\n        <td class=\"col-md-2\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Goals for - Goals against\">"
     + alias2(((helper = (helper = helpers.goalsScored || (depth0 != null ? depth0.goalsScored : depth0)) != null ? helper : alias1),(typeof helper === alias4 ? helper.call(depth0,{"name":"goalsScored","hash":{},"data":data}) : helper)))
     + "-"
     + alias2(((helper = (helper = helpers.goalsAgainst || (depth0 != null ? depth0.goalsAgainst : depth0)) != null ? helper : alias1),(typeof helper === alias4 ? helper.call(depth0,{"name":"goalsAgainst","hash":{},"data":data}) : helper)))
-    + "</td>\n        <td data-toggle=\"tooltip\" data-placement=\"top\" title=\"Current streak\">"
+    + "</td>\n        <td class=\"col-md-2\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Current streak\">"
     + alias2(alias3(((stack1 = (depth0 != null ? depth0.streak : depth0)) != null ? stack1.streakCode : stack1), depth0))
     + "</td>\n      </tr>\n";
 },"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {

@@ -1,5 +1,6 @@
 @import "teams-large";
 @import "teams-small";
+@import "teams-medium";
 
 body{
 padding-top: 70px !important;
@@ -54,8 +55,8 @@ padding-top: 70px !important;
     background-repeat: no-repeat;
     background-size: contain;
     display: inline-block;
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
     margin-right: 10px;
     margin-bottom: -12px;
 }
