@@ -2,15 +2,23 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="layouts/src/_dist/build/scss/sass.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.0/handlebars.min.js"></script>
-    <script src="layouts/src/_dist/build/js/nhl.templates.js"></script>
-    <script src="layouts/src/_dist/build/js/nhl.partials.js"></script>
-    <script src="layouts/src/_dist/build/js/main.js"></script>
+    <link rel="stylesheet" href="layouts/src/_dist/build/scss/sass.min.css">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" media="all">
     <link rel="icon" type="image/png" href="layouts/src/gui/img/favicon.png" sizes="32x32">
-<title>Pokechecked</title>
+    <title>Pokechecked - NHL highlights and more</title>
+
+    <meta property="og:title" content="Pokechecked - NHL highlights and more"></meta>
+    <meta property="og:type" content="website"></meta>
+    <meta property="og:url" content="http://www.pokechecked.com/"></meta>
+    <meta name="keywords" content="highlights, nhl, stats, if playoffs would start today, standings, penalties, pim per 60, points, assists, pokecheck, pokechecked, 5v5 points, starting goalies, injuries, injury list, standings, spoiler free highlights"></meta>
+    <meta property="og:description" content="Spoiler free NHL highlights. See which goalies who starts in net tonight. See which team who would play who if playoffs would start today. Injury list. Stats and much more"></meta>
+    <meta name="description" content="Spoiler free NHL highlights. See which team who would play who if playoffs would start today. Injury list. Stats and much more"></meta>
+    <meta name="og:image" content="layouts/src/_dist/build/image/print.png"></meta>
+    <meta name="twitter:card" content="summary"></meta>
+    <meta name="twitter:site" content="http://www.pokechecked.com/"></meta>
+    <meta name="twitter:title" content="Pokechecked - NHL highlights and more"></meta>
+    <meta name="twitter:description" content="Spoiler free NHL highlights. See which team who would play who if playoffs would start today. Injury list. Stats and much more""></meta>
+    <meta name="twitter:image" content="layouts/src/_dist/build/image/print.png"></meta>
 </head>
 
 <body>
@@ -43,7 +51,21 @@
 
 <div data-component="goalies"></div>
 
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.0/handlebars.min.js"></script>
+    <script src="layouts/src/_dist/build/js/nhl.templates.js"></script>
+    <script src="layouts/src/_dist/build/js/nhl.partials.js"></script>
+    <script src="layouts/src/_dist/build/js/main.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-90271146-1', 'auto');
+    ga('send', 'pageview');
+    </script>
 </body> 
 
 </html>
