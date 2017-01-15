@@ -20,7 +20,7 @@
 			return null;
 		},
 		setWithExpiration: function (key, value, date) {
-			this.getStorage().setItem(this.prefix + key, JSON.stringify({ value: value, localStorageKeyExpires: date}));
+			if(this.getStorage) this.getStorage().setItem(this.prefix + key, JSON.stringify({ value: value, localStorageKeyExpires: date}));
 		},
 		remove: function (key) {
 			this.getStorage().removeItem(key);
