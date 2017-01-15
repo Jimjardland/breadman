@@ -14,17 +14,18 @@ export default () => {
    			for(var i=0; i < arr.length; i++) {
    				const video = arr[i];
    				var vid;
+   				if(video.items.length) {
+					switch (video.title) {
+						case 'Recap':
+							vid = video.items[0].mediaPlaybackId || false;
+							break;
+						case 'Extended Highlights':
+							vid = video.items[0].mediaPlaybackId || false;
+							break;
+					}
 
-				switch (video.title) {
-					case 'Recap':
-						vid = video.items[0].mediaPlaybackId || false;
-						break;
-					case 'Extended Highlights':
-						vid = video.items[0].mediaPlaybackId || false;
-						break;
+					if(vid) return formatUrl(vid)
 				}
-
-				if(vid) return formatUrl(vid)
    			}
    				return null;
 		}
