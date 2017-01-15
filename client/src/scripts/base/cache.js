@@ -3,10 +3,10 @@
 	nhl.cache = {
 		prefix: 'breadman_',
 		set: function (key, value) {
-			localStorage.setItem(this.prefix + key, JSON.stringify(value));
+			this.getStorage().setItem(this.prefix + key, JSON.stringify(value));
 		},
 		get: function (key) {
-			var item = JSON.parse(localStorage.getItem(this.prefix + key));
+			var item = JSON.parse(this.getStorage().getItem(this.prefix + key));
 			var dateKey = 'localStorageKeyExpires';
 
 			if(item && item.hasOwnProperty(dateKey) && new Date(item[dateKey]).getTime() < new Date().getTime()) {
@@ -18,10 +18,14 @@
 			return null;
 		},
 		setWithExpiration: function (key, value, date) {
-			localStorage.setItem(this.prefix + key, JSON.stringify({ value: value, localStorageKeyExpires: date}));
+			this.getStorage().setItem(this.prefix + key, JSON.stringify({ value: value, localStorageKeyExpires: date}));
 		},
 		remove: function (key) {
-			localStorage.removeItem(key);
+			this.getStorage().removeItem(key);
+		},
+		getStorage: function () {
+			if(localStorage) return localStorage;
+			if(sessionStorage) return sessionStorage;
 		},
 		clear: function () {
 			var arr = [];
