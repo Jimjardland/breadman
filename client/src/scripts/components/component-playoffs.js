@@ -4,7 +4,7 @@ $(document).ready(function () {
 
 	if(components.exists) {
 		$.each(components, function (index, component) {
-			nhl.ajax.getAndCacheOrGetFromCache('/api/ifplayoffswouldstarttoday', 'playoffs').done(function (data) {
+			nhl.ajax.getAndCacheOrGetFromCache('/api/playoffs', 'playoffs').done(function (data) {
 				var setClasses = function () {
 					var teamNames = $(component).find('.team-name');
 					var length = teamNames.length;
