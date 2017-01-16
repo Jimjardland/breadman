@@ -1,11 +1,18 @@
-# Breadman
+Breadman
 
-npm install in root
+### Setup
+`npm install` root
 
-npm run startDev
+`npm install gulp -g`
 
-npm install in client/src
+`npm install` in client/src
 
-npm install gulp -g
+`gulp` in client/src
 
-gulp
+For Development
+
+`npm run startDev`
+
+For Production
+
+`npm start`
