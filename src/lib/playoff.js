@@ -51,7 +51,7 @@ export default () => {
 	const getMatchUps = (retVal, settings) => {
 		const conferenceTop = sortConferenceLeaders(retVal.divisionLeaders[settings.conference].teams)
 		const matchUp = (team1, team2) => ({ team1, team2 });
-
+		if(!conferenceTop.length) return null
 		if(conferenceTop[0].team.division.name === settings.division2) {
 			return [
 				matchUp(conferenceTop[0], retVal.wildCard[settings.conference][1]),

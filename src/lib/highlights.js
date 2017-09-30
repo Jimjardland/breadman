@@ -13,7 +13,7 @@ export default () => {
 		const getUrl = (arr) => {
    			for(var i=0; i < arr.length; i++) {
    				const video = arr[i];
-   				var vid;
+   				let vid;
    				if(video.items.length) {
 					switch (video.title) {
 						case 'Recap':
@@ -27,11 +27,11 @@ export default () => {
 					if(vid) return formatUrl(vid)
 				}
    			}
-   				return null;
+			return null;
 		}
 
 		const formatDay = (obj, games) => {
-			for (var i = 0; i < games.length; i++) {
+			for (let i = 0; i < games.length; i++) {
 				const game = games[i];
 
 				const gameInfo = {
@@ -72,7 +72,8 @@ export default () => {
 			retVal.unshift(formatDay(obj, day.games));
 
 		}
-		return retVal;
+		console.log(retVal)
+		return retVal
 	}
 
 	const promise = new Promise((resolve, reject) => {
