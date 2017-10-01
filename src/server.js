@@ -23,7 +23,10 @@ app.get('/goalies', (req, res) => page(res, 'goalies'));
 app.get('/standings', (req, res) => page(res, 'standings'));
 
 const getFilePath = (file) => `./tmp/${file}.json`;
-const get = (name, res) => fs.createReadStream(getFilePath(name)).pipe(res);
+const get = (name, res) => fs.readFile(getFilePath(name), 'utf8', (err, data) => {
+	res.json(JSON.parse(data))
+})
+
 const statsSorting = (json, res, req) => { 
 	fs.readFile(getFilePath(json), 'utf8', (err, data) => {
 	  const stats = res.json(sortStats(JSON.parse(data), { sort: req.query.sortOrder, start: req.query.startPage, limit: req.query.limit }));
