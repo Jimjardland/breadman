@@ -29,7 +29,7 @@ const get = (name, res) => fs.readFile(getFilePath(name), 'utf8', (err, data) =>
 
 const statsSorting = (json, res, req) => { 
 	fs.readFile(getFilePath(json), 'utf8', (err, data) => {
-	  const stats = res.json(sortStats(JSON.parse(data), { sort: req.query.sortOrder, start: req.query.startPage, limit: req.query.limit }));
+	  res.json(sortStats(JSON.parse(data), { sort: req.query.sortOrder, start: req.query.startPage, limit: req.query.limit }));
 	});
 }
 

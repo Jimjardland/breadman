@@ -15,17 +15,16 @@ export default () => {
    				const video = arr[i];
    				let vid;
    				if(video.items.length) {
-					switch (video.title) {
-						case 'Recap':
-							vid = video.items[0].mediaPlaybackId || false;
-							break;
-						case 'Extended Highlights':
-							vid = video.items[0].mediaPlaybackId || false;
-							break;
+						switch (video.title) {
+							case 'Recap':
+								vid = video.items[0].mediaPlaybackId || false;
+								break;
+							case 'Extended Highlights':
+								vid = video.items[0].mediaPlaybackId || false;
+								break;
+						}
+						if(vid) return formatUrl(vid)
 					}
-
-					if(vid) return formatUrl(vid)
-				}
    			}
 			return null;
 		}
@@ -62,7 +61,11 @@ export default () => {
 				}
 				obj.games.unshift(gameInfo);
 			}
-			return obj;
+			console.log(typeof obj.games[0].url)
+			console.log(typeof obj.games[1].url)
+			console.log(typeof obj.games[2].url)
+			obj.games.sort((x, y) => x.url !== null ? 1 : -1)
+			return obj
 		}
 
 		for(var i=0; i < json.dates.length; i++) {
