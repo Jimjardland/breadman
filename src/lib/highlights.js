@@ -61,10 +61,6 @@ export default () => {
 				}
 				obj.games.unshift(gameInfo);
 			}
-			console.log(typeof obj.games[0].url)
-			console.log(typeof obj.games[1].url)
-			console.log(typeof obj.games[2].url)
-			obj.games.sort((x, y) => x.url !== null ? 1 : -1)
 			return obj
 		}
 
