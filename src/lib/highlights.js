@@ -55,7 +55,7 @@ export default () => {
 					gameInfo.url = getUrl(game.content.media.epg);
 
 					if(game.linescore.currentPeriodOrdinal !== '3rd') gameInfo.endedWith = game.linescore.currentPeriodOrdinal;
-					
+
 				} else {
 					gameInfo.gameFinished = false;
 				}
@@ -71,7 +71,6 @@ export default () => {
 			retVal.unshift(formatDay(obj, day.games));
 
 		}
-		console.log(retVal)
 		return retVal
 	}
 

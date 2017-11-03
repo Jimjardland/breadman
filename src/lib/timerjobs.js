@@ -18,7 +18,6 @@ var job = new CronJob('0 */5 * * * *', function() {
         getFilePath = (file) => `./tmp/${file}.json`,
         writeFile = (file, items) => fs.writeFile(getFilePath(file), JSON.stringify(getJson(items)), 'utf8', () => null);
 
-  goaliesInForm().then(items => writeFile('goaliesInForm', items));
   wildCardStandings().then(items => writeFile('wildCardStandings', items));
   injuries().then(items => writeFile('injuries', items));
   playerStats().then(items => writeFile('playerStats', items));
