@@ -1,133 +1,3 @@
-(function () {
-'use strict';
-	nhl.ajax = {
-		getAndCacheOrGetFromCache: function (url, key) {
-			var storageData = nhl.cache.get(key);
-			var def = $.Deferred();
-
-			if(storageData === null) {
-				this.get(url).then(function (data) {
-					nhl.cache.setWithExpiration(key, data.items, data.nextUpdate);
-					def.resolve(data.items);
-				});
-			} else {
-				def.resolve(storageData.value);
-			}
-
-			return def.promise();
-
-		},
-		get: function (url) {
-			return $.ajax({
-				url: url,
-				type: 'GET',
-				headers: { 'Accept': 'application/json; odata=verbose' },
-				async: true
-			});
-		}
-	}
-}());
-(function () {
-'use strict';
-	nhl.cache = {
-		prefix: 'breadman_',
-		set: function (key, value) {
-			if(this.getStorage) this.getStorage().setItem(this.prefix + key, JSON.stringify(value));
-		},
-		get: function (key) {
-			if(this.getStorage) {
-				var item = JSON.parse(this.getStorage().getItem(this.prefix + key));
-				var dateKey = 'localStorageKeyExpires';
-
-				if(item && item.hasOwnProperty(dateKey) && new Date(item[dateKey]).getTime() < new Date().getTime()) {
-					this.remove(key);
-				} else {
-					return item;
-				}
-			}
-
-			return null;
-		},
-		setWithExpiration: function (key, value, date) {
-			if(this.getStorage) this.getStorage().setItem(this.prefix + key, JSON.stringify({ value: value, localStorageKeyExpires: date}));
-		},
-		remove: function (key) {
-			this.getStorage().removeItem(key);
-		},
-		getStorage: function () {
-			if(localStorage) return localStorage;
-			if(sessionStorage) return sessionStorage;
-		},
-		clear: function () {
-			var arr = [];
-
-			for (var i = 0; i < localStorage.length; i++){
-			    if (localStorage.key(i).substring(0, this.prefix.length) == this.prefix) {
-			        arr.push(localStorage.key(i));
-			    }
-			}
-
-			for (var i = 0; i < arr.length; i++) {
-			    localStorage.removeItem(arr[i]);
-			}
-		}
-	}
-}());
-(function () {
-'use strict';
-	nhl.component = {
-		get: function (name) {
-			var component = $('[data-component="' + name + '"]');
-			component.exists = component.length > 0;
-			return component;
-		}
-	}
-}());
-/* globals Handlebars */
-/*
-	Usage $('.someContainer').nhlTemplate({
-		templateName: filename relative from the templates-folder extension
-	});
-
-	dependencies: handlebars, a template-folder configured in gulp.
-*/
-
-(function () {
-	'use strict';
-
-	$.fn.nhlTemplate = function (settings) {
-		var config = {
-			templateName: null,
-			data: null,
-			operation: 'append',
-			callback: function () {}
-		};
-
-		if (settings) {
-			$.extend(config, settings);
-			$.extend(config.data, settings);
-		}
-
-		var self = this;
-		self.init = function () {
-			this.each(function () {
-				var self = $(this);
-				var postTemplate = nhl.templates[config.templateName];
-				var result = postTemplate(config.data);
-				if (config.operation === 'append') {
-					self.append(result);
-				} else {
-					self.replaceWith(result);
-				}
-				config.callback.call(self);
-			});
-		};
-		self.init();
-	};
-})(jQuery);
-
-
-
 $(document).ready(function () {
 	'use strict';
 	var components = nhl.component.get('goalies');
@@ -346,6 +216,136 @@ $(document).ready(function () {
 		});
 	}
 });
+(function () {
+'use strict';
+	nhl.ajax = {
+		getAndCacheOrGetFromCache: function (url, key) {
+			var storageData = nhl.cache.get(key);
+			var def = $.Deferred();
+
+			if(storageData === null) {
+				this.get(url).then(function (data) {
+					nhl.cache.setWithExpiration(key, data.items, data.nextUpdate);
+					def.resolve(data.items);
+				});
+			} else {
+				def.resolve(storageData.value);
+			}
+
+			return def.promise();
+
+		},
+		get: function (url) {
+			return $.ajax({
+				url: url,
+				type: 'GET',
+				headers: { 'Accept': 'application/json; odata=verbose' },
+				async: true
+			});
+		}
+	}
+}());
+(function () {
+'use strict';
+	nhl.cache = {
+		prefix: 'breadman_',
+		set: function (key, value) {
+			if(this.getStorage) this.getStorage().setItem(this.prefix + key, JSON.stringify(value));
+		},
+		get: function (key) {
+			if(this.getStorage) {
+				var item = JSON.parse(this.getStorage().getItem(this.prefix + key));
+				var dateKey = 'localStorageKeyExpires';
+
+				if(item && item.hasOwnProperty(dateKey) && new Date(item[dateKey]).getTime() < new Date().getTime()) {
+					this.remove(key);
+				} else {
+					return item;
+				}
+			}
+
+			return null;
+		},
+		setWithExpiration: function (key, value, date) {
+			if(this.getStorage) this.getStorage().setItem(this.prefix + key, JSON.stringify({ value: value, localStorageKeyExpires: date}));
+		},
+		remove: function (key) {
+			this.getStorage().removeItem(key);
+		},
+		getStorage: function () {
+			if(localStorage) return localStorage;
+			if(sessionStorage) return sessionStorage;
+		},
+		clear: function () {
+			var arr = [];
+
+			for (var i = 0; i < localStorage.length; i++){
+			    if (localStorage.key(i).substring(0, this.prefix.length) == this.prefix) {
+			        arr.push(localStorage.key(i));
+			    }
+			}
+
+			for (var i = 0; i < arr.length; i++) {
+			    localStorage.removeItem(arr[i]);
+			}
+		}
+	}
+}());
+(function () {
+'use strict';
+	nhl.component = {
+		get: function (name) {
+			var component = $('[data-component="' + name + '"]');
+			component.exists = component.length > 0;
+			return component;
+		}
+	}
+}());
+/* globals Handlebars */
+/*
+	Usage $('.someContainer').nhlTemplate({
+		templateName: filename relative from the templates-folder extension
+	});
+
+	dependencies: handlebars, a template-folder configured in gulp.
+*/
+
+(function () {
+	'use strict';
+
+	$.fn.nhlTemplate = function (settings) {
+		var config = {
+			templateName: null,
+			data: null,
+			operation: 'append',
+			callback: function () {}
+		};
+
+		if (settings) {
+			$.extend(config, settings);
+			$.extend(config.data, settings);
+		}
+
+		var self = this;
+		self.init = function () {
+			this.each(function () {
+				var self = $(this);
+				var postTemplate = nhl.templates[config.templateName];
+				var result = postTemplate(config.data);
+				if (config.operation === 'append') {
+					self.append(result);
+				} else {
+					self.replaceWith(result);
+				}
+				config.callback.call(self);
+			});
+		};
+		self.init();
+	};
+})(jQuery);
+
+
+
 (function () {
 	'use strict';
 

@@ -144,41 +144,6 @@ this["nhl"]["templates"]["injuries"] = Handlebars.template({"1":function(depth0,
 
   return ((stack1 = helpers.each.call(depth0,(depth0 != null ? depth0.InjuryReports : depth0),{"name":"each","hash":{},"fn":this.program(1, data, 0),"inverse":this.noop,"data":data})) != null ? stack1 : "");
 },"useData":true});
-this["nhl"]["templates"]["stats"] = Handlebars.template({"1":function(depth0,helpers,partials,data,blockParams,depths) {
-    var helper, alias1=helpers.helperMissing, alias2=this.escapeExpression, alias3="function";
-
-  return "      <tr>\n        <td><strong>"
-    + alias2((helpers.add || (depth0 && depth0.add) || alias1).call(depth0,(data && data.index),(depths[1] != null ? depths[1].start : depths[1]),1,{"name":"add","hash":{},"data":data}))
-    + "</strong></td>\n       <td class=\"col-md-2\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Player\">"
-    + alias2(((helper = (helper = helpers.playerName || (depth0 != null ? depth0.playerName : depth0)) != null ? helper : alias1),(typeof helper === alias3 ? helper.call(depth0,{"name":"playerName","hash":{},"data":data}) : helper)))
-    + "</td>\n        <td class=\"col-md-1 logo-padding\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Team\"><div class=\"small-logo logo-small "
-    + alias2((helpers.fixTeam || (depth0 && depth0.fixTeam) || alias1).call(depth0,(depth0 != null ? depth0.playerTeamsPlayedFor : depth0),{"name":"fixTeam","hash":{},"data":data}))
-    + "\"></div></td>\n        <td class=\"col-md-1\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Position\">"
-    + alias2(((helper = (helper = helpers.playerPositionCode || (depth0 != null ? depth0.playerPositionCode : depth0)) != null ? helper : alias1),(typeof helper === alias3 ? helper.call(depth0,{"name":"playerPositionCode","hash":{},"data":data}) : helper)))
-    + "</td>\n        <td class=\"col-md-1\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Games played\">"
-    + alias2(((helper = (helper = helpers.gamesPlayed || (depth0 != null ? depth0.gamesPlayed : depth0)) != null ? helper : alias1),(typeof helper === alias3 ? helper.call(depth0,{"name":"gamesPlayed","hash":{},"data":data}) : helper)))
-    + "</td>\n        <td class=\"col-md-1\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Goals\">"
-    + alias2(((helper = (helper = helpers.goals || (depth0 != null ? depth0.goals : depth0)) != null ? helper : alias1),(typeof helper === alias3 ? helper.call(depth0,{"name":"goals","hash":{},"data":data}) : helper)))
-    + "</td>\n        <td class=\"col-md-1\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Assists\">"
-    + alias2(((helper = (helper = helpers.assists || (depth0 != null ? depth0.assists : depth0)) != null ? helper : alias1),(typeof helper === alias3 ? helper.call(depth0,{"name":"assists","hash":{},"data":data}) : helper)))
-    + "</td>\n        <td class=\"col-md-1\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Points\">"
-    + alias2(((helper = (helper = helpers.points || (depth0 != null ? depth0.points : depth0)) != null ? helper : alias1),(typeof helper === alias3 ? helper.call(depth0,{"name":"points","hash":{},"data":data}) : helper)))
-    + "</td>\n        <td class=\"col-md-1\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Penalty per 60 minutes of icetime\">"
-    + alias2((helpers.toFixed || (depth0 && depth0.toFixed) || alias1).call(depth0,(depth0 != null ? depth0.penaltiesPerSixty : depth0),2,{"name":"toFixed","hash":{},"data":data}))
-    + "</td>\n        <td class=\"col-md-1\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Points per 60 minutes of icetime\">"
-    + alias2((helpers.toFixed || (depth0 && depth0.toFixed) || alias1).call(depth0,(depth0 != null ? depth0.pointsPerSixty : depth0),2,{"name":"toFixed","hash":{},"data":data}))
-    + "</td>\n        <td class=\"col-md-1\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Points in even strength\">"
-    + alias2(((helper = (helper = helpers.fsPoints || (depth0 != null ? depth0.fsPoints : depth0)) != null ? helper : alias1),(typeof helper === alias3 ? helper.call(depth0,{"name":"fsPoints","hash":{},"data":data}) : helper)))
-    + "</td>\n        <td class=\"col-md-1\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Faceoff win percentage\">"
-    + alias2((helpers.toFixed || (depth0 && depth0.toFixed) || alias1).call(depth0,(depth0 != null ? depth0.faceoffWinPctg : depth0),2,{"name":"toFixed","hash":{},"data":data}))
-    + "</td>\n      </tr>\n";
-},"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data,blockParams,depths) {
-    var stack1;
-
-  return "<div class=\"table-responsive\">\n      <div class=\"row\">\n        <h2 class=\"text-center\">Stats</h2>\n        <div class=\"container\">\n          <div class=\"row\"></div>\n          <div class=\"text-left\">   \n            <h4>Sorting by:</h4>\n            <select class=\"selectpicker drop\" id=\"sortby\" data-width=\"170px\">\n              <option value=\"\" disabled>Sort by</option>\n              <option value=\"points\">Points</option>\n              <option value=\"goals\">Goals</option>\n              <option value=\"assists\">Assists</option>\n              <option value=\"fsPoints\">Points 5v5</option>\n              <option value=\"penaltiesPerSixty\">PIM per 60</option>\n              <option value=\"pointsPerSixty\">Points per 60</option>\n              <option value=\"faceoffWinPctg\">Faceoff percentage</option>\n            </select>\n          </div>\n        </div>\n        </div>\n    <table class=\"table table-striped\">\n    <thead>\n      <tr>\n        <th></th>\n        <th data-toggle=\"tooltip\" data-placement=\"top\" title=\"Player\">Player</th>\n        <th data-toggle=\"tooltip\" data-placement=\"top\" title=\"Team\">Team</th>\n        <th data-toggle=\"tooltip\" data-placement=\"top\" title=\"Position\">Pos</th>\n        <th data-toggle=\"tooltip\" data-placement=\"top\" title=\"Games played\">Gp</th>\n        <th data-toggle=\"tooltip\" data-placement=\"top\" title=\"Goals\">G</th>\n        <th data-toggle=\"tooltip\" data-placement=\"top\" title=\"Assists\">A</th>\n        <th data-toggle=\"tooltip\" data-placement=\"top\" title=\"Points\">P</th>\n        <th data-toggle=\"tooltip\" data-placement=\"top\" title=\"Penalty per 60 minutes of icetime\">PIM/60</th>\n        <th data-toggle=\"tooltip\" data-placement=\"top\" title=\"Points per 60 minutes of icetime\">P/60</th>\n        <th data-toggle=\"tooltip\" data-placement=\"top\" title=\"Points in even strength\">P/5v5</th>\n        <th data-toggle=\"tooltip\" data-placement=\"top\" title=\"Faceoff win percentage\">FO%</th>\n      </tr>\n    </thead>\n    <tbody>\n"
-    + ((stack1 = helpers.each.call(depth0,(depth0 != null ? depth0.data : depth0),{"name":"each","hash":{},"fn":this.program(1, data, 0, blockParams, depths),"inverse":this.noop,"data":data})) != null ? stack1 : "")
-    + "    </tbody>\n  </table>\n  <div class=\"text-center\">\n      <nav aria-label=\"Page navigation pagination\">\n        <ul class=\"pagination\">\n            <li class=\"page-item\">\n                <a class=\"page-link\" data-change=\"prev\" href=\"#\" aria-label=\"Previous\">\n                    <span aria-hidden=\"true\">&laquo;</span>\n                    <span class=\"sr-only\">Previous</span>\n                </a>\n            </li>\n            <li class=\"page-item\">\n                <a class=\"page-link\" data-change=\"next\" href=\"#\" aria-label=\"Next\">\n                    <span aria-hidden=\"true\">&raquo;</span>\n                    <span class=\"sr-only\">Next</span>\n                </a>\n            </li>\n        </ul>\n      </nav>\n    </div>";
-},"useData":true,"useDepths":true});
 this["nhl"]["templates"]["_select"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
     return "<select class=\"selectpicker drop\" id=\"type\" data-width=\"100px\">\n  <option value=\"wildcardstandings\">Wildcard</option>\n  <option value=\"divisionstandings\">League</option>\n</select>";
 },"useData":true});
@@ -259,3 +224,38 @@ this["nhl"]["templates"]["standings-wildcard"] = Handlebars.template({"compiler"
     + ((stack1 = this.invokePartial(partials.table,(depth0 != null ? depth0.western : depth0),{"name":"table","data":data,"indent":"    ","helpers":helpers,"partials":partials})) != null ? stack1 : "")
     + "  </div>";
 },"usePartial":true,"useData":true});
+this["nhl"]["templates"]["stats"] = Handlebars.template({"1":function(depth0,helpers,partials,data,blockParams,depths) {
+    var helper, alias1=helpers.helperMissing, alias2=this.escapeExpression, alias3="function";
+
+  return "      <tr>\n        <td><strong>"
+    + alias2((helpers.add || (depth0 && depth0.add) || alias1).call(depth0,(data && data.index),(depths[1] != null ? depths[1].start : depths[1]),1,{"name":"add","hash":{},"data":data}))
+    + "</strong></td>\n       <td class=\"col-md-2\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Player\">"
+    + alias2(((helper = (helper = helpers.playerName || (depth0 != null ? depth0.playerName : depth0)) != null ? helper : alias1),(typeof helper === alias3 ? helper.call(depth0,{"name":"playerName","hash":{},"data":data}) : helper)))
+    + "</td>\n        <td class=\"col-md-1 logo-padding\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Team\"><div class=\"small-logo logo-small "
+    + alias2((helpers.fixTeam || (depth0 && depth0.fixTeam) || alias1).call(depth0,(depth0 != null ? depth0.playerTeamsPlayedFor : depth0),{"name":"fixTeam","hash":{},"data":data}))
+    + "\"></div></td>\n        <td class=\"col-md-1\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Position\">"
+    + alias2(((helper = (helper = helpers.playerPositionCode || (depth0 != null ? depth0.playerPositionCode : depth0)) != null ? helper : alias1),(typeof helper === alias3 ? helper.call(depth0,{"name":"playerPositionCode","hash":{},"data":data}) : helper)))
+    + "</td>\n        <td class=\"col-md-1\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Games played\">"
+    + alias2(((helper = (helper = helpers.gamesPlayed || (depth0 != null ? depth0.gamesPlayed : depth0)) != null ? helper : alias1),(typeof helper === alias3 ? helper.call(depth0,{"name":"gamesPlayed","hash":{},"data":data}) : helper)))
+    + "</td>\n        <td class=\"col-md-1\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Goals\">"
+    + alias2(((helper = (helper = helpers.goals || (depth0 != null ? depth0.goals : depth0)) != null ? helper : alias1),(typeof helper === alias3 ? helper.call(depth0,{"name":"goals","hash":{},"data":data}) : helper)))
+    + "</td>\n        <td class=\"col-md-1\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Assists\">"
+    + alias2(((helper = (helper = helpers.assists || (depth0 != null ? depth0.assists : depth0)) != null ? helper : alias1),(typeof helper === alias3 ? helper.call(depth0,{"name":"assists","hash":{},"data":data}) : helper)))
+    + "</td>\n        <td class=\"col-md-1\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Points\">"
+    + alias2(((helper = (helper = helpers.points || (depth0 != null ? depth0.points : depth0)) != null ? helper : alias1),(typeof helper === alias3 ? helper.call(depth0,{"name":"points","hash":{},"data":data}) : helper)))
+    + "</td>\n        <td class=\"col-md-1\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Penalty per 60 minutes of icetime\">"
+    + alias2((helpers.toFixed || (depth0 && depth0.toFixed) || alias1).call(depth0,(depth0 != null ? depth0.penaltiesPerSixty : depth0),2,{"name":"toFixed","hash":{},"data":data}))
+    + "</td>\n        <td class=\"col-md-1\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Points per 60 minutes of icetime\">"
+    + alias2((helpers.toFixed || (depth0 && depth0.toFixed) || alias1).call(depth0,(depth0 != null ? depth0.pointsPerSixty : depth0),2,{"name":"toFixed","hash":{},"data":data}))
+    + "</td>\n        <td class=\"col-md-1\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Points in even strength\">"
+    + alias2(((helper = (helper = helpers.fsPoints || (depth0 != null ? depth0.fsPoints : depth0)) != null ? helper : alias1),(typeof helper === alias3 ? helper.call(depth0,{"name":"fsPoints","hash":{},"data":data}) : helper)))
+    + "</td>\n        <td class=\"col-md-1\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Faceoff win percentage\">"
+    + alias2((helpers.toFixed || (depth0 && depth0.toFixed) || alias1).call(depth0,(depth0 != null ? depth0.faceoffWinPctg : depth0),2,{"name":"toFixed","hash":{},"data":data}))
+    + "</td>\n      </tr>\n";
+},"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data,blockParams,depths) {
+    var stack1;
+
+  return "<div class=\"table-responsive\">\n      <div class=\"row\">\n        <h2 class=\"text-center\">Stats</h2>\n        <div class=\"container\">\n          <div class=\"row\"></div>\n          <div class=\"text-left\">   \n            <h4>Sorting by:</h4>\n            <select class=\"selectpicker drop\" id=\"sortby\" data-width=\"170px\">\n              <option value=\"\" disabled>Sort by</option>\n              <option value=\"points\">Points</option>\n              <option value=\"goals\">Goals</option>\n              <option value=\"assists\">Assists</option>\n              <option value=\"fsPoints\">Points 5v5</option>\n              <option value=\"penaltiesPerSixty\">PIM per 60</option>\n              <option value=\"pointsPerSixty\">Points per 60</option>\n              <option value=\"faceoffWinPctg\">Faceoff percentage</option>\n            </select>\n          </div>\n        </div>\n        </div>\n    <table class=\"table table-striped\">\n    <thead>\n      <tr>\n        <th></th>\n        <th data-toggle=\"tooltip\" data-placement=\"top\" title=\"Player\">Player</th>\n        <th data-toggle=\"tooltip\" data-placement=\"top\" title=\"Team\">Team</th>\n        <th data-toggle=\"tooltip\" data-placement=\"top\" title=\"Position\">Pos</th>\n        <th data-toggle=\"tooltip\" data-placement=\"top\" title=\"Games played\">Gp</th>\n        <th data-toggle=\"tooltip\" data-placement=\"top\" title=\"Goals\">G</th>\n        <th data-toggle=\"tooltip\" data-placement=\"top\" title=\"Assists\">A</th>\n        <th data-toggle=\"tooltip\" data-placement=\"top\" title=\"Points\">P</th>\n        <th data-toggle=\"tooltip\" data-placement=\"top\" title=\"Penalty per 60 minutes of icetime\">PIM/60</th>\n        <th data-toggle=\"tooltip\" data-placement=\"top\" title=\"Points per 60 minutes of icetime\">P/60</th>\n        <th data-toggle=\"tooltip\" data-placement=\"top\" title=\"Points in even strength\">P/5v5</th>\n        <th data-toggle=\"tooltip\" data-placement=\"top\" title=\"Faceoff win percentage\">FO%</th>\n      </tr>\n    </thead>\n    <tbody>\n"
+    + ((stack1 = helpers.each.call(depth0,(depth0 != null ? depth0.data : depth0),{"name":"each","hash":{},"fn":this.program(1, data, 0, blockParams, depths),"inverse":this.noop,"data":data})) != null ? stack1 : "")
+    + "    </tbody>\n  </table>\n  <div class=\"text-center\">\n      <nav aria-label=\"Page navigation pagination\">\n        <ul class=\"pagination\">\n            <li class=\"page-item\">\n                <a class=\"page-link\" data-change=\"prev\" href=\"#\" aria-label=\"Previous\">\n                    <span aria-hidden=\"true\">&laquo;</span>\n                    <span class=\"sr-only\">Previous</span>\n                </a>\n            </li>\n            <li class=\"page-item\">\n                <a class=\"page-link\" data-change=\"next\" href=\"#\" aria-label=\"Next\">\n                    <span aria-hidden=\"true\">&raquo;</span>\n                    <span class=\"sr-only\">Next</span>\n                </a>\n            </li>\n        </ul>\n      </nav>\n    </div>";
+},"useData":true,"useDepths":true});
