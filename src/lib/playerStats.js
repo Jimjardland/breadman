@@ -4,7 +4,8 @@ import { getSeason } from './utils/timeHelper'
 
 export default (sort) => {
 	const season = getSeason();
-	const url = `http://www.nhl.com/stats/rest/skaters?isAggregate=false&reportType=basic&isGame=false&reportName=skatersummary&sort=[{%22property%22:%22points%22,%22direction%22:%22DESC%22},{%22property%22:%22goals%22,%22direction%22:%22DESC%22},{%22property%22:%22gamesPlayed%22,%22direction%22:%22DESC%22}]&cayenneExp=gameTypeId=2%20and%20seasonId%3E=${season}%20and%20seasonId%3C=20172018`;
+	console.log(season)
+	const url = `https://api.nhle.com/stats/rest/en/skater/summary?isAggregate=false&reportType=basic&isGame=false&reportName=skatersummary&sort=[{%22property%22:%22points%22,%22direction%22:%22DESC%22},{%22property%22:%22goals%22,%22direction%22:%22DESC%22},{%22property%22:%22gamesPlayed%22,%22direction%22:%22DESC%22}]&cayenneExp=gameTypeId=2%20and%20seasonId%3E=${season}%20and%20seasonId%3C=${season}`;
 	const setUniqueStats = (json) => {
 		for(var i=0; i < json.data.length; i++) {
 			var player = json.data[i];
@@ -26,6 +27,7 @@ export default (sort) => {
 	const promise = new Promise ((resolve, reject) => {
 		try {
 			request(url, (err, resp, body) => {
+				console.log(body)
 				const json = setUniqueStats(JSON.parse(body))
 				resolve(json);
 			});
